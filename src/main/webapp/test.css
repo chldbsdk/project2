@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.half_HL{
+	background: linear-gradient(to top,
+								#FFE400 50%,
+								transparent 50%);
+}
