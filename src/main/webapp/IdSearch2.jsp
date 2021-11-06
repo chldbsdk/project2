@@ -14,21 +14,12 @@
 			document.idSearch.name.focus();
 			return;
 		}
-		if(document.idSearch.birth.value =="") {
-			alert("생년월일을 입력해주세요.");
-			document.idSearch.birth.focus();
+		if(document.idSearch.email.value =="") {
+			alert("이메일을 입력해주세요.");
+			document.idSearch.email.focus();
 			return;
 		}
-		if(document.idSearch.tel.value=="") {
-			alert("전화번호를 입력해주세요.");
-			document.idSearch.tel.focus();
-			return;
-		}
-/* 		                                    
-            append (                        
-                '<input type="text" name="txt"> <input type="button" class="btnRemove" value="Remove"><br>'                    
-            ); */
-		
+
 		document.idSearch.submit();
 	}
 </script>
@@ -39,20 +30,19 @@
 		<tr><td align="center"><h2>아이디 찾기</h2></td></tr>
 		<tr><td align="center">
 		<label>
-			<input type="radio" name="find" value="phone" checked>휴대전화
+			<input type="radio" name="find" value="phone" onclick="location.href='IdSearch.jsp'">휴대전화
 		</label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<label>
-			<input type="radio" name="find" value="email" onclick="location.href='IdSearch2.jsp'">이메일
+			<input type="radio" name="find" value="email" checked>이메일
 		</label></td></tr>
 		<tr><td>
 		<input type="text" size="40" name="name" placeholder="이름"></td></tr>
 		<tr><td>
-		<input type="text" size="40" name="birth" placeholder="생년월일 6자리"></td></tr>
-		<tr><td>
-		<input type="tel" size="40" name="tel" placeholder="전화번호 8자리 (010제외)"></td></tr>
+		<input type="text" size="40" name="email" placeholder="email@naver.com"></td></tr>
+		
 		<tr><td>	
-		<input type="button" style="width:303px" class="button" value="인증요청" onclick="nullCheck()"></td></tr>
+		<input type="button" style="width:303px" class="button" value="아이디 찾기" onclick="nullCheck()"></td></tr>
 		<script type="text/javascript">
 			/* document.getElementById("button").onclick=function() {
 				document.write("<tr><td><input type="text" size="40" name="dd" placeholder="인증번호"></td></tr>");
