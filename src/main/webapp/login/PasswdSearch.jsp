@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="design.css" rel="stylesheet" type="text/css">
+<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript">
 	function nullCheck() {
@@ -40,7 +40,7 @@
 		<input type="email" size="40" name="email" placeholder="email@naver.com"></td></tr>
 		<tr><td>	
 		<input type="button" style="width:303px" value="비밀번호 찾기" onclick="nullCheck()"></td></tr>	
-		<!-- <input type="button" size="40" class="passwdbtn" onClick="">비밀번호 찾기 -->
+	
 	</table></form>
 </body>
 </html>

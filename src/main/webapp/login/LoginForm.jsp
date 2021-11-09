@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="design.css" rel="stylesheet" type="text/css">
+<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
-<%
+<%-- <%
 String saveok=(String)session.getAttribute("saveok");
 String id=(String)session.getAttribute("idok");
-%>
+%> --%>
 <script type="text/javascript">
 	function loginCheck() {
 		if(document.loginform.id.value =="") {
@@ -35,7 +35,7 @@ String id=(String)session.getAttribute("idok");
 		<input type="text" size="40" name="id" placeholder="아이디"></td></tr>
 		<tr><td>
 		<input type="password" size="40" name="passwd" id="passwd" placeholder="비밀번호"></td></tr>
-		<tr><td>
+		<%-- <tr><td>
 		<label><input type="checkbox">로그인 상태 유지</label>
 		<label>
 		<%if(saveok==null) { %>
@@ -43,7 +43,7 @@ String id=(String)session.getAttribute("idok");
 		<%}else { %>
 		<input type="checkbox" name="saveid" checked>아이디 저장
 		<%} %>
-		</label></td></tr>
+		</label></td></tr> --%>
 		
 		<tr><td>
 		<input type="button" style="width:303px" value="로그인" onclick="loginCheck()"></td></tr>

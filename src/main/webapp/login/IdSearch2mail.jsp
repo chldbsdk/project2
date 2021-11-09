@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="design.css" rel="stylesheet" type="text/css">
+<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript">
 	function nullCheck() {

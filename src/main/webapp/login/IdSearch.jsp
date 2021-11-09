@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="design.css" rel="stylesheet" type="text/css">
+<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript">
 	function nullCheck() {
@@ -43,7 +43,7 @@
 		</label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<label>
-			<input type="radio" name="find" value="email" onclick="location.href='IdSearch2.jsp'">이메일
+			<input type="radio" name="find" value="email" onclick="location.href='IdSearch2mail.jsp'">이메일
 		</label></td></tr>
 		<tr><td>
 		<input type="text" size="40" name="name" placeholder="이름"></td></tr>
