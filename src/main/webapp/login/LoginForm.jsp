@@ -26,7 +26,7 @@ String id=(String)session.getAttribute("idok");
 		document.loginform.submit();
 	}
 </script>
-<body style="background-color:#F5DA81">
+<body>
 <jsp:include page ="../main/top.jsp" flush="false"/>
 <form name="loginform" action="loginAction.jsp" method="post">
 	<table>

@@ -35,7 +35,7 @@
 		//document.idSearch.submit();
 	}
 </script>
-<body style="background-color:#F5DA81">
+<body>
 <form name="idSearch" action="LoginForm.jsp" method="post">
 
 	<table id='phone'>

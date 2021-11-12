@@ -23,7 +23,7 @@
 		document.idSearch.submit();
 	}
 </script>
-<body style="background-color:#F5DA81">
+<body>
 <form name="idSearch" action="idSearchAction.jsp" method="post">
 	<table>
 		<!-- <caption>로그인</caption> -->
