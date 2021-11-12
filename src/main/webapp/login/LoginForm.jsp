@@ -27,6 +27,7 @@ String id=(String)session.getAttribute("idok");
 	}
 </script>
 <body style="background-color:#F5DA81">
+<jsp:include page ="../main/top.jsp" flush="false"/>
 <form name="loginform" action="loginAction.jsp" method="post">
 	<table>
 		<!-- <caption>로그인</caption> -->
@@ -51,10 +52,25 @@ String id=(String)session.getAttribute("idok");
 		<tr><td align="center"><br>
 		<span onclick="location.href='IdSearch.jsp'">아이디 찾기</span> | 
 		<span onclick="location.href='PasswdSearch.jsp'">비밀번호 찾기</span> | 
-		<span onclick="location.href='JoinForm.jsp'">회원가입</span></td></tr>
+		<span onclick="location.href='../join/JoinForm.jsp'">회원가입</span></td></tr>
 		<tr><td><hr></td></tr>
 		<tr><td>
 		<button type="button" size="40" class="nonbtn" onClick="location.href='Non_Member.jsp'">비회원 주문조회</button></td></tr>
 	</table></form>
+	<%
+		String msg=request.getParameter("msg");
+		if(msg!=null && msg.equals("0")) {
+	%>
+			<script type="text/javascript">
+			alert("비밀번호를 확인해주세요.")
+			history.back();
+			</script>
+		<%}
+		else if (msg != null && msg.equals("-1")) {
+%>			<script type="text/javascript">
+			alert("아이디를 확인해주세요.")
+			history.back();
+			</script>
+		<%}	%>
 </body>
 </html>

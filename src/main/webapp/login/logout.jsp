@@ -1,3 +1,4 @@
+<%@page import="Login.LoginDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -129,12 +130,18 @@ padding-top:7px;
 </style>
 </head>
 <body>
+<%
+	/* String id = (String)session.getAttribute("sessionid");
+	LoginDAO dao = new LoginDAO();
+	String name = dao.getName(id); */
+%>
 <center>
 <div class="top">
 	<div class="wrapper">
 	<ul class = "top-menu">
-		<li class="test"><a href="../join/JoinForm.jsp"><p>회원가입</p></a></li>	
-		<li class="test"><a href="../login/LoginForm.jsp"><p>로그인</p></a></li>	
+		<li class="test"><a href="../join/JoinForm.jsp"><p>마이페이지</p></a></li>	
+		<li class="test"><a href="logoutAction.jsp"><p>로그아웃</p></a></li>
+		<%-- <li class="test"><p><%=name %>님 환영합니다!</p></li> --%>
 	</ul>
 	</div>
 </div>
