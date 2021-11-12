@@ -145,4 +145,32 @@ public class LoginDAO {
 			 }
 		 }
 	}
+	
+	public String idSearch(String name, String email) {
+		String id = "";
+		try {
+			 StringBuffer query = new StringBuffer();
+			 query.append("select id from membertbl where name=? and email=?");
+			 
+			 conn = DatabaseUtil.getConnection();
+			 pstmt=conn.prepareStatement(query.toString());
+			 pstmt.setString(1, name);
+			 pstmt.setString(2, email);
+			 rs=pstmt.executeQuery();
+			 if(rs.next()) {
+				 id=rs.getString("id");
+			 }
+			 
+			 return id;
+		}catch(Exception sqle) {
+			 throw new RuntimeException(sqle.getMessage());
+		 }finally {
+			 try {
+				 if(pstmt != null) {pstmt.close(); pstmt=null;}
+				 if(conn != null) {conn.close();conn=null;}
+			 }catch(Exception e) {
+				 throw new RuntimeException(e.getMessage());
+			 }
+		 }
+	}
 }

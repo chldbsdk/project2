@@ -24,17 +24,21 @@
 			document.idSearch.tel.focus();
 			return;
 		}
-/* 		                                    
-            append (                        
-                '<input type="text" name="txt"> <input type="button" class="btnRemove" value="Remove"><br>'                    
-            ); */
+		/* const box = document.getElementById("box");
+		const newP=document.createElement('p');
+		newP.innerHTML="<input type='text' size='40' name='num' placeholder='인증번호'><br><input type='button' style='width:303px' value='아이디 찾기'>";
+		box.appendChild(newP); */
 		
-		document.idSearch.submit();
+		const table=document.getElementById('phone');
+		const newRow=table.insertRow();
+		
+		//document.idSearch.submit();
 	}
 </script>
 <body style="background-color:#F5DA81">
 <form name="idSearch" action="LoginForm.jsp" method="post">
-	<table>
+
+	<table id='phone'>
 		<!-- <caption>로그인</caption> -->
 		<tr><td align="center"><h2>아이디 찾기</h2></td></tr>
 		<tr><td align="center">
@@ -61,22 +65,9 @@
                 $('.button').append (                        
                     '<input type="text" name="txt"> <input type="button" class="btnRemove" value="Remove"><br>'                    
                 ); 
-			} */
-		</script>
-
+			}  */
+		</script>	
 		
-		<!-- <tr><td>
-		<input type="text" size="40" name="num" placeholder="인증번호"></td></tr>
-		<tr><td>	
-		<input type="submit" style="width:303px" value="아이디 찾기"></td></tr>	
-		<input type="button" size="40" class="nonOrderbtn" onClick="">비회원 주문조회 -->
-		
-		<!-- <tr><td>
-		<input type="text" size="40" name="name" placeholder="이름"></td></tr>
-		<tr><td>
-		<input type="email" size="40" name="email" placeholder="email@naver.com"></td></tr>
-		<tr><td>	
-		<input type="submit" style="width:303px" value="아이디 찾기"></td></tr>	 -->
 	</table></form>
 </body>
 </html>

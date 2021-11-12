@@ -69,10 +69,7 @@
 	color:black;
 	
 }
-#nav li:hover > a{
-	margin:0;
-	padding:5px;
-}
+
 #nav li:hover ul{
 	opacity:1;
 }
