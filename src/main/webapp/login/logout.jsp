@@ -137,7 +137,7 @@ padding-top:7px;
 	<div class="wrapper">
 	<ul class = "top-menu">
 		<li class="test"><a href="../join/JoinForm.jsp"><p>마이페이지</p></a></li>	
-		<li class="test"><a href="logoutAction.jsp"><p>로그아웃</p></a></li>
+		<li class="test"><a href="../login/logoutAction.jsp"><p>로그아웃</p></a></li>
 		<li class="test"><p><b><%=session.getAttribute("sessionID") %>님 환영합니다!</b></p></li>
 	</ul>
 	</div>
@@ -149,7 +149,7 @@ padding-top:7px;
 </div> -->
 	<header>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<h2 onclick="location.href=''">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<h2 onclick="location.href='loginmain.jsp'">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" size="40" value="" placeholder="serach">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>

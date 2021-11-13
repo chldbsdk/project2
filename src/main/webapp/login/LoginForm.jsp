@@ -66,6 +66,6 @@ String id=(String)session.getAttribute("idok");
 	</table>
 </form>
 </div>
-<%-- <jsp:include page ="../main/footer.jsp" flush="false"/> --%>
 </body>
+<%-- <jsp:include page ="../main/footer.jsp" flush="false"/> --%>
 </html>

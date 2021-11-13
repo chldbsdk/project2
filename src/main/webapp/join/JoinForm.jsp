@@ -7,7 +7,6 @@
 <title>회원가입 화면</title>
 <style>
  div{padding-left: 800px;}
- body{background-color : LemonChiffon}
 </style> 
  
 <link href='../../css/join_style.css' rel='stylesheet' style='text/css'/>
@@ -30,11 +29,7 @@ function checkValue() {
  	return false;
  	}
 }
- 
- // 취소 버튼 클릭시 로그인 화면으로 이동
-function goLoginForm() {
- 	location.href="../login/LoginForm.jsp";
-}
+
 </script>
 </head>
 <body>
@@ -86,7 +81,9 @@ function goLoginForm() {
 <input type="radio" name="gender" value="여">여</td></tr> 
  
 <tr><td id="title">이메일</td></tr>
-<tr><td><input type="text" name="mail1" size="20" maxlength="30"> @
+<tr>
+<td>
+<input type="text" name="mail1" size="20" maxlength="30"> @
  <select name="mail2">
  <option>naver.com</option>
  <option>daum.net</option>
@@ -103,7 +100,7 @@ function goLoginForm() {
 </table> 
 <br> 
 <input type="submit" value="가입"/> 
-<input type="button" value="취소" onclick="goLoginForm()">
+<input type="button" value="취소" onclick="javascript:window.location='../login/LoginForm.jsp'">
 </form>
 </div>
 </body>

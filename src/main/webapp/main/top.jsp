@@ -46,6 +46,7 @@
 	border-right:1px solid black;
 	border-bottom:1px solid black;
 }
+
 #nav ul li{
 	float:none;
 	padding:0;
@@ -77,6 +78,10 @@
 	height:35px;
 	overflow:visible;
 	padding:0;
+}
+#nav ul li:hover a{
+	background:#eee;
+	font-weight:bold;
 }
 
 /*제일윗부분*/
@@ -142,7 +147,7 @@ padding-top:7px;
 </div> -->
 	<header>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<h2 onclick="location.href=''">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<h2 onclick="location.href='main.jsp'">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" size="40" value="" placeholder="serach">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
@@ -152,14 +157,14 @@ padding-top:7px;
 
 
 	<ul id="nav">
-	<!-- <li><a href="#">카테고리+</a>
+	<li><a href="#">카테고리+</a>
 		<ul>
 			<li><a href="#">기초 스킨케어</a></li>
 			<li><a href="#">메이크업</a></li>
 			<li><a href="#">바디케어</a></li>
 			<li><a href="#">미용소품</a></li>
 		</ul>
-	</li> -->
+	</li>
 	<li><a href="#">랭킹</a></li>
 	<li><a href="#">신상</a></li>
 	<li><a href="#">이벤트</a></li>

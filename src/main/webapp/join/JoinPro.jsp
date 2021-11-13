@@ -9,7 +9,6 @@
 <title>회원가입 처리내용</title>
 <style>
 div{padding-left: 800px;}
- body{background-color : LemonChiffon}
 </style>
 </head>
 <body>
@@ -78,13 +77,8 @@ dao.insertMember(memberBean);
  </tr>
 </table> 
 <br>
-<input type="button" value="확인" onclick="goLoginForm()"> 
+<input type="button" value="확인" onclick="javascript:window.location='../main/main.jsp'"> 
 
-<script type="text/javascript">
-function goLoginForm() {
- 	location.href="../login/LoginForm.jsp";
-}
-</script>
 </div>
 </body>
 </html>

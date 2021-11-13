@@ -22,6 +22,7 @@ transform:translate(-50%, -50%);
 }
 </style>
 <body>
+<%@ include file="../main/main.jsp" %>	
 <%
 	//로그인한 사람이면 userID라는 변수에 해당 아이디가 저장되고 그렇지 않으면 null값.
 	String userID = null;
