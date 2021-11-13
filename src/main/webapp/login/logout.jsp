@@ -138,7 +138,7 @@ padding-top:7px;
 	<ul class = "top-menu">
 		<li class="test"><a href="../join/JoinForm.jsp"><p>마이페이지</p></a></li>	
 		<li class="test"><a href="logoutAction.jsp"><p>로그아웃</p></a></li>
-		<%-- <li class="test"><p><%=name %>님 환영합니다!</p></li> --%>
+		<li class="test"><p><b><%=session.getAttribute("sessionID") %>님 환영합니다!</b></p></li>
 	</ul>
 	</div>
 </div>
@@ -148,8 +148,12 @@ padding-top:7px;
 	<span style="color:gray;" onclick="location.href='../login/IdSearch.jsp'"> 회원가입</span>
 </div> -->
 	<header>
-	<h3>#화음 <input type="text" value="" placeholder="serach">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<h2 onclick="location.href=''">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" size="40" value="" placeholder="serach">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
+	&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-user"></i></span>
 	</header>
 
@@ -166,7 +170,7 @@ padding-top:7px;
 	<li><a href="#">랭킹</a></li>
 	<li><a href="#">신상</a></li>
 	<li><a href="#">이벤트</a></li>
-	<li><a href="#">게시판</a></li>
+	<li><a href="../board.jsp">게시판</a></li>
 	</ul>
 </div>
 </center>

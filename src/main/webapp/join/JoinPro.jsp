@@ -1,3 +1,4 @@
+<%@page import="Member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="Member.MemberBean" %>
@@ -18,7 +19,11 @@ div{padding-left: 800px;}
 %>
 <jsp:useBean id="memberBean" class="Member.MemberBean" />
 <jsp:setProperty property="*" name="memberBean"/>
- 
+<%
+MemberDAO dao = MemberDAO.getInstance();
+dao.insertMember(memberBean);
+%>
+<!-- 화면출력 -->
 <div id="wrap">
 <br><b><font size="5" color="gray">회원가입 정보를 확인하세요.</font></b>
 <br><br>
@@ -73,7 +78,13 @@ div{padding-left: 800px;}
  </tr>
 </table> 
 <br>
-<input type="button" value="확인"> 
+<input type="button" value="확인" onclick="goLoginForm()"> 
+
+<script type="text/javascript">
+function goLoginForm() {
+ 	location.href="../login/LoginForm.jsp";
+}
+</script>
 </div>
 </body>
 </html>

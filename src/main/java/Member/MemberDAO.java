@@ -63,8 +63,9 @@ public class MemberDAO {
 	 // 쿼리 생성한다.
 	 // 가입일의 경우 자동으로 세팅되게 하기 위해 sysdate를 사용
 	 StringBuffer sql = new StringBuffer();
-	 sql.append("insert into JSP_MEMBER values");
-	 sql.append("(?, ?, ?, ?, ?, ?, ?, ?, sysdate)"); 
+	 sql.append("insert into membertbl values");
+	 sql.append("(?, ?, ?, ?, ?, ?, ?, ?)"); 
+	 //마지막에 sysdate뺌 칼럼오류나서. 그럼 가입일..그런거 모를수도있는데 일단 나중에 연구하는걸로
 	 stringToDate(member);
 	 
 	 /* 
@@ -75,8 +76,8 @@ public class MemberDAO {
 	 pstmt.setString(1, member.getId());
 	 pstmt.setString(2, member.getPassword());
 	 pstmt.setString(3, member.getName());
-	 pstmt.setString(4, member.getGender());
-	 pstmt.setDate(5, stringToDate(member));
+	 pstmt.setDate(4, stringToDate(member));
+	 pstmt.setString(5, member.getGender());
 	 pstmt.setString(6, member.getMail1()+"@"+member.getMail2());
 	 pstmt.setString(7, member.getPhone());
 	 pstmt.setString(8, member.getAddress());
