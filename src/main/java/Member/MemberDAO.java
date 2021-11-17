@@ -117,7 +117,7 @@ public class MemberDAO {
 	 try {
 	 // 쿼리
 	 StringBuffer query = new StringBuffer();
-	 query.append("SELECT * FROM JSP_MEMBER WHERE ID=?");
+	 query.append("SELECT * FROM membertbl WHERE ID=?");
 	 conn = DatabaseUtil.getConnection();
 	 pstmt = conn.prepareStatement(query.toString());
 	 pstmt.setString(1, id);
@@ -130,7 +130,7 @@ public class MemberDAO {
 	 String month = birthday.substring(5, 7);
 	 String day = birthday.substring(8, 10);
 	 // 이메일을 @ 기준으로 자른다.
-	 String mail = rs.getString("mail");
+	 String mail = rs.getString("email");
 	 int idx = mail.indexOf("@"); 
 	 String mail1 = mail.substring(0, idx);
 	 String mail2 = mail.substring(idx+1);
@@ -146,9 +146,9 @@ public class MemberDAO {
 	 member.setBirthdd(day);
 	 member.setMail1(mail1);
 	 member.setMail2(mail2);
-	 member.setPhone(rs.getString("phone"));
+	 member.setPhone(rs.getString("number"));
 	 member.setAddress(rs.getString("address"));
-	 member.setReg(rs.getTimestamp("reg"));
+	 //member.setReg(rs.getTimestamp("reg"));
 	 }
 	 return member;
 	 } catch (Exception sqle) {
@@ -176,8 +176,8 @@ public class MemberDAO {
 	 PreparedStatement pstmt = null;
 	 try {
 	 StringBuffer query = new StringBuffer();
-	 query.append("UPDATE JSP_MEMBER SET");
-	 query.append(" PASSWORD=?, MAIL=?, PHONE=?, ADDRESS=?");
+	 query.append("UPDATE membertbl SET");
+	 query.append(" PASSWORD=?, EMAIL=?, NUMBER=?, ADDRESS=?");
 	 query.append(" WHERE ID=?");
 	 conn = DatabaseUtil.getConnection();
 	 pstmt = conn.prepareStatement(query.toString());
@@ -224,10 +224,10 @@ public class MemberDAO {
 	 try {
 	 // 비밀번호 조회
 	 StringBuffer query1 = new StringBuffer();
-	 query1.append("SELECT PASSWORD FROM JSP_MEMBER WHERE ID=?");
+	 query1.append("SELECT PASSWORD FROM membertbl WHERE ID=?");
 	 // 회원 삭제
 	 StringBuffer query2 = new StringBuffer();
-	 query2.append("DELETE FROM JSP_MEMBER WHERE ID=?");
+	 query2.append("DELETE FROM membertbl WHERE ID=?");
 	 conn = DatabaseUtil.getConnection();
 	 // 자동 커밋을 false로 한다.
 	 conn.setAutoCommit(false);
@@ -313,4 +313,34 @@ public class MemberDAO {
 	 }
 	 }
 	 } // end loginCheck()
+	 
+	 public boolean duplicateIdCheck(String id) {
+		 Connection conn=null;
+		 PreparedStatement pstm=null;
+		 ResultSet rs=null;
+		 boolean x = false;
+		 
+		 try {
+			 StringBuffer query=new StringBuffer();
+			 query.append("select id from membertbl where id=?");
+			 
+			 conn=DatabaseUtil.getConnection();
+			 pstm=conn.prepareStatement(query.toString());
+			 pstm.setString(1, id);
+			 rs=pstm.executeQuery();
+			 
+			 if(rs.next()) x=true; //해당 아이디 존재
+			 return x;
+		 }catch(Exception sqle) {
+			 throw new RuntimeException(sqle.getMessage());
+		 }finally {
+			 try {
+				 if(pstm != null) {pstm.close(); pstm=null;}
+				 if(conn != null) {conn.close(); conn=null;}
+			 }catch(Exception e) {
+				 throw new RuntimeException(e.getMessage());
+			 }
+			 
+		 }
+	 }
 }

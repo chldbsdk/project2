@@ -14,6 +14,7 @@
 <jsp:setProperty property="*" name="memberBean"/> 
  
 <%
+request.setCharacterEncoding("UTF-8");
 	// 세션에서 아이디를 가져와 MemberBean에 세팅한다.
 	String id= (String)session.getAttribute("sessionID"); 
 	memberBean.setId(id);
@@ -26,6 +27,6 @@
 <br><br>
 <font size="5" color="black">회원정보가 수정되었습니다.</font>
 <br><br>
-<input type="button" value="메인으로" onclick="javascript:window.location='MainForm.jsp'"/>
+<input type="button" value="메인으로" onclick="javascript:window.location='../main/main.jsp'"/>
 </body>
 </html>

@@ -5,8 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../design.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+table {
+	position:absolute;
+  	padding : 150px 477.4px;
+}
+
+button {
+	width:100%;
+}
+</style>
 <script type="text/javascript">
 	function nullCheck() {
 		if(document.idSearch.name.value =="") {
@@ -19,7 +28,7 @@
 			document.idSearch.email.focus();
 			return;
 		}
-
+		document.idSearch.method="post";
 		document.idSearch.submit();
 	}
 </script>

@@ -94,7 +94,7 @@
 }
 .top {
 
-position:realative;
+position:relative;
 left:0;
 padding:0;
 width:100%;
@@ -135,8 +135,17 @@ padding-top:7px;
 <div class="top">
 	<div class="wrapper">
 	<ul class = "top-menu">
+	<%
+		Object userId = session.getAttribute("sessionID");
+		if(userId == null) {
+	%>
 		<li class="test"><a href="../join/JoinForm.jsp"><p>회원가입</p></a></li>	
 		<li class="test"><a href="../login/LoginForm.jsp"><p>로그인</p></a></li>	
+	<%} else { %>
+		<li class="test"><a href="../join/UserInfoForm.jsp"><p>마이페이지</p></a></li>	
+		<li class="test"><a href="../login/logoutAction.jsp"><p>로그아웃</p></a></li>	
+		<li class="test"><p><b><%=session.getAttribute("sessionID") %>님 환영합니다!</b></p></li>
+	<%} %>
 	</ul>
 	</div>
 </div>
@@ -145,16 +154,18 @@ padding-top:7px;
 	<span style="color:gray;" onclick="location.href='../login/LoginForm.jsp'">로그인 |</span>
 	<span style="color:gray;" onclick="location.href='../login/IdSearch.jsp'"> 회원가입</span>
 </div> -->
-	<header>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<h2 onclick="location.href='main.jsp'">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<header style="margin-top:6px;">
+	<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<h2 onclick="location.href='../main/main.jsp'">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" size="40" value="" placeholder="serach">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
 	&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-user"></i></span>
+	<br>
 	</header>
-
+	<br>
 
 	<ul id="nav">
 	<li><a href="#">카테고리+</a>

@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>회원정보 수정화면</title>
 <%
+request.setCharacterEncoding("UTF-8");
  String id = session.getAttribute("sessionID").toString();
  
  MemberDAO dao = MemberDAO.getInstance();
@@ -48,7 +49,7 @@
  <b><font size="6" color="black" >회원정보 수정</font></b>
  <br><br>
 <form method="post"
-action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp"
+action="ModifyPro.jsp?contentPage=member/pro/ModifyPro.jsp"
  name="userInfo" onsubmit="return checkValue()">
 <table>
  <tr>

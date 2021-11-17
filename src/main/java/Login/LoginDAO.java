@@ -146,6 +146,7 @@ public class LoginDAO {
 		 }
 	}
 	
+	//이메일로 아이디 찾기
 	public String idSearch(String name, String email) {
 		String id = "";
 		try {
@@ -159,6 +160,7 @@ public class LoginDAO {
 			 rs=pstmt.executeQuery();
 			 if(rs.next()) {
 				 id=rs.getString("id");
+				 return id;
 			 }
 			 
 			 return id;

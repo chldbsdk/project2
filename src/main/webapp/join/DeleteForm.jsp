@@ -27,7 +27,7 @@
 <br><br>
  
 <form name="deleteform" method="post"
-action="MainForm.jsp?contentPage=member/pro/DeletePro.jsp"
+action="DeletePro.jsp?contentPage=member/pro/DeletePro.jsp"
 onsubmit="return checkValue()">
 <table>
  <tr><td>비밀번호</td>
@@ -36,7 +36,7 @@ onsubmit="return checkValue()">
  </table>
  
 <br>
-<input type="button" value="취소" onclick="javascript:window.location='MainForm.jsp'">
+<input type="button" value="취소" onclick="javascript:window.location='../main/main.jsp'">
 <input type="submit" value="탈퇴" />
 </form>
 </div> 

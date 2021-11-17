@@ -17,18 +17,19 @@
  
  function changeForm(val){
  if(val == "-1"){
- location.href="MainForm.jsp";
+ location.href="../main/main.jsp";
  }else if(val == "0"){
  
-location.href="MainForm.jsp?contentPage=member/view/ModifyFrom.jsp";
+location.href="ModifyForm.jsp?contentPage=member/view/ModifyFrom.jsp";
  }else if(val == "1"){
  
-location.href="MainForm.jsp?contentPage=member/view/DeleteForm.jsp";
+location.href="DeleteForm.jsp?contentPage=member/view/DeleteForm.jsp";
  }
  } 
 </script>
 </body>
 <%
+request.setCharacterEncoding("UTF-8");
  String id = session.getAttribute("sessionID").toString();
  
  // 세션에 저장된 아이디를 가져와서
