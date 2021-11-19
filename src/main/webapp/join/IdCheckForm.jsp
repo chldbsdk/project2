@@ -18,10 +18,10 @@
 	function blackChekc(f) {
 		var id=f.id.value;
 		id=id.trim();
-		/* if(id.length<5) {
+		if(id.length<5) {
 			alert("아이디는 5자 이상");
 			return false;
-		} */
+		} 
 		return true;
 	}
 </script>

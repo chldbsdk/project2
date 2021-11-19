@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>회원가입 화면</title>
 <style>
- div{padding-left: 800px;}
+#wrap{padding-left: 500px;}
 </style> 
  
 <link href='../../css/join_style.css' rel='stylesheet' style='text/css'/>
@@ -41,7 +41,7 @@ function checkValue() {
 function IDCheck() {
 	window.name="IdCheckForm";
 	window.open("IdCheckForm.jsp","chkForm",
-				"width=500, height=300, resizable=no, scrollbars=no");
+				"width=400, height=200, resizable=no, scrollbars=no");
 }
 
 function IDCHECK() {
@@ -55,14 +55,15 @@ function IDCHECK() {
 </script>
 </head>
 <body>
+<%@include file="../main/top.jsp" %>
 <div id="wrap">
 <br><b><font size="6" color="black">회원가입</font></b>
 <br><br>
  
-<form method="post" action="JoinPro.jsp">
+<form method="post" action="JoinPro.jsp" name="dlatl">
 <table>
 <tr><td id="title">아이디</td></tr>
-<tr><td><input type="text" name="id" size="30" placeholder="아이디 입력(5~11글자)" maxlength="20">
+<tr><td><input type="text" name="id" size="30" placeholder="아이디 입력(5~11글자)" maxlength="20" readonly>
 <input type="button" name="idcbtn" value="중복확인" onclick="IDCheck()">
 <input type="hidden" name="idcheck" value="idUncheck"></td></tr>
  

@@ -343,4 +343,27 @@ public class MemberDAO {
 			 
 		 }
 	 }
+	 
+	 public int duplecateID(String id) {
+		 int cnt=0;
+		 Connection conn=null;
+		 PreparedStatement pstm=null;
+		 ResultSet rs=null;
+		 try {
+			 StringBuffer query=new StringBuffer();
+			 query.append("select count(id) as cnt from membertbl where id=?");
+			 conn=DatabaseUtil.getConnection();
+			 pstm=conn.prepareStatement(query.toString());
+			 pstm.setString(1, id);
+			 rs=pstm.executeQuery();
+
+			 if(rs.next()) {
+				 cnt=rs.getInt("cnt");
+			 }
+			 return cnt;
+		 }catch(Exception e) {
+			 System.out.println("아이디 중복 확인 실패 : "+e);
+		 } return -1;
+	 }
+	
 }
