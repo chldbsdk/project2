@@ -35,7 +35,7 @@ transform:translate(-50%, -50%);
 		<div style="background-color: #f0f0f0; height: 100px; width: 800px; line-height: 100px; text-align: center; border-bottom: solid 3px #808080;">
 			<h3 >문의(Q/A)</h3>
 		</div>
-		<form action="boardReceive.jsp" method="post">
+		<form action="QnAboardAction.jsp" method="post">
 		<input type="hidden" name="board_id" value="${sessionScope.sessionID }">
 			<div style="height: 50px; line-height: 50px;">
 				<label for="titleInput" style="margin: 0px 60px 0px 60px;">제목</label><input type="text" name="bbsTitle" id="titleInput" style="width: 575px;">
@@ -59,13 +59,15 @@ transform:translate(-50%, -50%);
 <div>
 <%
 	//로그인 안한 사람일 경우 
-	if(userID == null) {
+	//if(userID == null) {
 		//창 나오는걸로 하면 될듯.
 %>
-<button onclick="if(confirm('로그인 하세요'))location.href='login/LoginForm.jsp';" type="button">글쓰기</button>
+
+<!-- <button onclick="if(confirm('로그인 하세요'))location.href='login/LoginForm.jsp';" type="button">글쓰기</button> -->
 <%
-	} 
+	//} 
 %>
+<%@include file = "../main/footer.jsp" %>
 </div>
 </body>
 </html>

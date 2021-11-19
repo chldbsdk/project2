@@ -15,11 +15,6 @@ request.setCharacterEncoding("UTF-8");
  MemberBean memberBean = dao.getUserInfo(id);
  %>
  
- <style>
- div{padding-left: 800px;}
- body{background-color : LemonChiffon}
-</style>
- 
  <script>
  function init(){
 	setComboValue("<%=memberBean.getMail2()%>");
@@ -42,9 +37,17 @@ request.setCharacterEncoding("UTF-8");
  	}
  } 
  </script>
-
+<style>
+table {
+	border:1px solid;
+	margin-left: auto; 
+	margin-right: auto;
+}
+</style>
 </head>
+<%@ include file="../main/top.jsp" %>
 <body onload="init()">
+<center>
 <br>
  <b><font size="6" color="black" >회원정보 수정</font></b>
  <br><br>
@@ -128,6 +131,6 @@ value="<%=memberBean.getPhone() %>"></td>
 onclick="javascript:window.location='MainForm.jsp'">
  <input type="submit" value="수정"/> 
  </form>
-
+</center>
 </body>
 </html>

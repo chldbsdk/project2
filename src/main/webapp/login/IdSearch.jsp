@@ -38,14 +38,15 @@ button {
 		newP.innerHTML="<input type='text' size='40' name='num' placeholder='인증번호'><br><input type='button' style='width:303px' value='아이디 찾기'>";
 		box.appendChild(newP); */
 		
-		const table=document.getElementById('phone');
-		const newRow=table.insertRow();
+		/* const table=document.getElementById('phone');
+		const newRow=table.insertRow(); */
 		
-		//document.idSearch.submit();
+		document.idSearch.submit();
 	}
 </script>
 <body>
-<form name="idSearch" action="LoginForm.jsp" method="post">
+<jsp:include page ="../main/top.jsp" flush="false"/>
+<form name="idSearch" action="idSearchActionPhone.jsp" method="post">
 
 	<table id='phone'>
 		<!-- <caption>로그인</caption> -->
@@ -63,8 +64,10 @@ button {
 		<tr><td>
 		<input type="text" size="40" name="birth" placeholder="생년월일 6자리"></td></tr>
 		<tr><td>
-		<input type="tel" size="40" name="tel" placeholder="전화번호 8자리 (010제외)"></td></tr>
+		<input type="tel" size="40" name="tel" placeholder="휴대폰 번호 (010포함)"></td></tr>
 		<tr><td>	
+		<input type="button" style="width:303px" class="button" value="아이디 찾기" onclick="nullCheck()"></td></tr>
+<!-- 		<tr><td>	
 		<input type="button" style="width:303px" class="button" value="인증요청" onclick="nullCheck()"></td></tr>
 		<script type="text/javascript">
 			/* document.getElementById("button").onclick=function() {
@@ -75,7 +78,7 @@ button {
                     '<input type="text" name="txt"> <input type="button" class="btnRemove" value="Remove"><br>'                    
                 ); 
 			}  */
-		</script>	
+		</script>	 -->
 		
 	</table></form>
 </body>

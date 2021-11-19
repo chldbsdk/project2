@@ -147,8 +147,8 @@ public class LoginDAO {
 	}
 	
 	//이메일로 아이디 찾기
-	public String idSearch(String name, String email) {
-		String id = "";
+	public String idSearchEmail(String name, String email) {
+		String id = null;
 		try {
 			 StringBuffer query = new StringBuffer();
 			 query.append("select id from membertbl where name=? and email=?");
@@ -160,10 +160,7 @@ public class LoginDAO {
 			 rs=pstmt.executeQuery();
 			 if(rs.next()) {
 				 id=rs.getString("id");
-				 return id;
 			 }
-			 
-			 return id;
 		}catch(Exception sqle) {
 			 throw new RuntimeException(sqle.getMessage());
 		 }finally {
@@ -174,5 +171,64 @@ public class LoginDAO {
 				 throw new RuntimeException(e.getMessage());
 			 }
 		 }
+		return id;
+	}
+	
+	//휴대폰번호로 아이디 찾기
+	public String idSearchPhone(String name, String birth,String number) {
+		String id = null;
+		try {
+			 StringBuffer query = new StringBuffer();
+			 query.append("select id from membertbl where name=? and birth=? and number=?");
+			 
+			 conn = DatabaseUtil.getConnection();
+			 pstmt=conn.prepareStatement(query.toString());
+			 pstmt.setString(1, name);
+			 pstmt.setString(2, birth);
+			 pstmt.setString(3, number);
+			 rs=pstmt.executeQuery();
+			 if(rs.next()) {
+				 id=rs.getString("id");
+			 }
+		}catch(Exception sqle) {
+			 throw new RuntimeException(sqle.getMessage());
+		 }finally {
+			 try {
+				 if(pstmt != null) {pstmt.close(); pstmt=null;}
+				 if(conn != null) {conn.close();conn=null;}
+			 }catch(Exception e) {
+				 throw new RuntimeException(e.getMessage());
+			 }
+		 }
+		return id;
+	}
+	
+	//비밀번호찾기
+	public String pwdSearch(String id, String name,String email) {
+		String pwd = null;
+		try {
+			 StringBuffer query = new StringBuffer();
+			 query.append("select password from membertbl where id=? and name=? and email=?");
+			 
+			 conn = DatabaseUtil.getConnection();
+			 pstmt=conn.prepareStatement(query.toString());
+			 pstmt.setString(1, id);
+			 pstmt.setString(2, name);
+			 pstmt.setString(3, email);
+			 rs=pstmt.executeQuery();
+			 if(rs.next()) {
+				 pwd=rs.getString("password");
+			 }
+		}catch(Exception sqle) {
+			 throw new RuntimeException(sqle.getMessage());
+		 }finally {
+			 try {
+				 if(pstmt != null) {pstmt.close(); pstmt=null;}
+				 if(conn != null) {conn.close();conn=null;}
+			 }catch(Exception e) {
+				 throw new RuntimeException(e.getMessage());
+			 }
+		 }
+		return pwd;
 	}
 }

@@ -37,7 +37,8 @@ button {
 	}
 </script>
 <body>
-<form name="passwdSearch" action="LoginForm.jsp" method="post">
+<jsp:include page ="../main/top.jsp" flush="false"/>
+<form name="passwdSearch" action="pwdSearchAction.jsp" method="post">
 	<table>
 		<!-- <caption>로그인</caption> -->
 		<tr><td align="center"><h2>비밀번호 찾기</h2></td></tr>

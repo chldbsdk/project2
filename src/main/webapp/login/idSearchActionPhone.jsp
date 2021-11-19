@@ -5,9 +5,10 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String name=request.getParameter("name");
-String email=request.getParameter("email"); 
+String birth=request.getParameter("birth"); 
+String number=request.getParameter("tel"); 
 LoginDAO dao=new LoginDAO();
-String id = dao.idSearchEmail(name,email);
+String id = dao.idSearchPhone(name,birth,number);
 %>    
 <!DOCTYPE html>
 <html>

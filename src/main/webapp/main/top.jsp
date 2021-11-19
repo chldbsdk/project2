@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../design.css" rel="stylesheet" type="text/css">
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <style>
 #menu {
@@ -127,9 +126,17 @@ padding-top:7px;
 	color : darkgray;
 }
 
-
+b{
+	font-size:40px;
+}
 </style>
 </head>
+<script type="text/javascript">
+	function aaa() {
+		alert("로그인 해주세요!!")
+		location.href="../login/LoginForm.jsp"
+	}
+</script>
 <body>
 <center>
 <div class="top">
@@ -154,15 +161,24 @@ padding-top:7px;
 	<span style="color:gray;" onclick="location.href='../login/LoginForm.jsp'">로그인 |</span>
 	<span style="color:gray;" onclick="location.href='../login/IdSearch.jsp'"> 회원가입</span>
 </div> -->
-	<header style="margin-top:6px;">
+	<header style="padding-top:6px;">
 	<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<h2 onclick="location.href='../main/main.jsp'">#화음 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<input type="text" size="40" value="" placeholder="serach">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<b onclick="location.href='../main/main.jsp'">#화음</b>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" size="50" value="" placeholder="serach">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
 	&nbsp;&nbsp;
-	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-user"></i></span>
+	<%if(userId==null) {%>
+	<span onclick="aaa()"><i class="fas fa-user"></i></span>
+	<%} else { %>
+	<span onclick="location.href='../join/UserInfoForm.jsp'"><i class="fas fa-user"></i></span>
+	<%} %>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<br>
 	</header>
 	<br>
@@ -179,7 +195,7 @@ padding-top:7px;
 	<li><a href="#">랭킹</a></li>
 	<li><a href="#">신상</a></li>
 	<li><a href="#">이벤트</a></li>
-	<li><a href="../board.jsp">게시판</a></li>
+	<li><a href="../board/QnAboard.jsp">게시판</a></li>
 	</ul>
 </div>
 </center>

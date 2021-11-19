@@ -13,7 +13,9 @@
  h1, h2, h3, h4, h5, h6 { margin:0; padding:0; }
  ul, lo, li { margin:0; padding:0; list-style:none; }
 
- section#content { float:right; width:500px; }
+ section#content { float:right; width:500px; 
+ 					margin-right:400px; margin-top:300px;
+ 					margin-bottom:210px;}
  section#container::after { content:""; display:block; clear:both; } 
 
 </style>

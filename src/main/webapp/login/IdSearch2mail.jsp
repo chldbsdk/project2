@@ -33,6 +33,7 @@ button {
 	}
 </script>
 <body>
+<jsp:include page ="../main/top.jsp" flush="false"/>
 <form name="idSearch" action="idSearchAction.jsp" method="post">
 	<table>
 		<!-- <caption>로그인</caption> -->

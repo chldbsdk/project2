@@ -31,7 +31,8 @@ button {
 		document.nonmemform.submit();
 	}
 </script>
-<body style="background-color:#F5DA81">
+<body>
+<jsp:include page ="../main/top.jsp" flush="false"/>
 <form name="nonmemform" action="LoginForm.jsp" method="post">
 	<table>
 		<!-- <caption>로그인</caption> -->

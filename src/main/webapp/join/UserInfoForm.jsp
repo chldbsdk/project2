@@ -8,11 +8,16 @@
 <meta charset="UTF-8">
 <title>현재 내 정보 출력 화면</title>
 </head>
-<body>
 <style>
- div{padding-left: 800px;}
- body{background-color : LemonChiffon}
+table {
+	border:1px solid;
+	margin-left: auto; 
+	margin-right: auto;
+}
 </style>
+<body>
+<%@ include file="../main/top.jsp" %>	
+
 <script type="text/javascript">
  
  function changeForm(val){
@@ -37,8 +42,9 @@ request.setCharacterEncoding("UTF-8");
  MemberDAO dao = MemberDAO.getInstance();
  MemberBean memberBean = dao.getUserInfo(id);
  %>
+ <center>
  <br>
- <b><font size="6" color="black">내 정보</font></b>
+ <b><font size="6" color="black" >내 정보</font></b>
  <br><br>
  
  <table>
@@ -102,8 +108,8 @@ request.setCharacterEncoding("UTF-8");
  </tr>
  </table> 
  <br>
- <input type="button" value="회원 정보 수정"
-onclick="changeForm(0)">
+ <input type="button" value="회원 정보 수정" onclick="changeForm(0)">
  <input type="button" value="탈퇴" onclick="changeForm(1)">
  <input type="button" value="확인"onclick="changeForm(-1)">
+ </center>
 </html>

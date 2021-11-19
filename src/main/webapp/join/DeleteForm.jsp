@@ -6,11 +6,15 @@
 <meta charset="UTF-8">
 <title>탈퇴 화면</title>
 </head>
-<body>
 <style>
-	div{padding-left: 800px;}
- 	body{background-color : LemonChiffon}
+table {
+	border:1px solid;
+	margin-left: auto; 
+	margin-right: auto;
+}
 </style>
+<%@ include file="../main/top.jsp" %>
+<body>
 <script type="text/javascript">
  	// 비밀번호 미입력시 경고창
  	function checkValue(){
@@ -21,6 +25,7 @@
  	}
 </script>
 </body>
+<center>
 <div>
 <br>
 <b><font size="6" color="black">내 정보</font></b>
@@ -40,4 +45,5 @@ onsubmit="return checkValue()">
 <input type="submit" value="탈퇴" />
 </form>
 </div> 
+</center>
 </html>

@@ -36,7 +36,7 @@
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인을 하세요.')"); //'로그인 하세요.' 경고창 띄우기
-		script.println("location.href='login/LoginForm.jsp'"); //로그인 화면으로 이동, 로그인jsp
+		script.println("location.href='../login/LoginForm.jsp'"); //로그인 화면으로 이동, 로그인jsp
 		script.println("</script>");
 		script.close();
 	}else { //로그인한 경우 
