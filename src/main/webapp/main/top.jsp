@@ -151,11 +151,12 @@ b{
 	<%} else { %>
 		<li class="test"><a href="../join/UserInfoForm.jsp"><p>마이페이지</p></a></li>	
 		<li class="test"><a href="../login/logoutAction.jsp"><p>로그아웃</p></a></li>	
-		<li class="test"><p><b><%=session.getAttribute("sessionID") %>님 환영합니다!</b></p></li>
+		<li class="test"><p><strong><%=session.getAttribute("sessionID") %>님 환영합니다!</strong></p></li>
 	<%} %>
 	</ul>
 	</div>
 </div>
+
 <div>
 <!-- <div id=login style="float:right;">
 	<span style="color:gray;" onclick="location.href='../login/LoginForm.jsp'">로그인 |</span>
