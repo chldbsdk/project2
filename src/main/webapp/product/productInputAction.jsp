@@ -61,7 +61,7 @@
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('상품 등록에 성공했습니다')");
-		script.println("location.href='productInput.jsp'"); //게시판 눌렀을 때(목록있는 곳)의 위치로 이동 
+		script.println("location.href='productList.jsp'"); //게시판 눌렀을 때(목록있는 곳)의 위치로 이동 
 		script.println("</script>");
 		script.close();
 		}

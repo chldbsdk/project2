@@ -26,7 +26,7 @@ public class ProductDAO {
 	public ProductDAO() {		
 		//생성자 만들기
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/product?serverTimezone=UTC";
+			String dbURL = "jdbc:mysql://localhost:3306/shoppingmall?serverTimezone=UTC";
 			
 			String dbID="root";
 			String dbPassword = "a202044033";
@@ -57,7 +57,7 @@ public class ProductDAO {
 	public int updateProduct(Product p) {
 		int re = -1;
 		
-		String sql = "update product set productID=?, productName=?, productStock=?, productPrice=?, fileName=?, fileRealName=?, productInfo=?";
+		String sql = "update producttbl set productID=?, productName=?, productStock=?, productPrice=?, fileName=?, fileRealName=?, productInfo=?";
 		
 		try {
 			conn = ds.getConnection();
@@ -82,7 +82,7 @@ public class ProductDAO {
 	public int deleteProduct(String productID) {
 		int re = -1;
 		
-		String sql = "delete product where productID=?";
+		String sql = "delete producttbl where productID=?";
 		
 		try {
 			conn = ds.getConnection();
@@ -99,7 +99,7 @@ public class ProductDAO {
 	
 	//productID 상품 번호 가져오는 함수
 	public int getProductID() {
-		String SQL = "SELECT productID FROM PRODUCT ORDER BY productID DESC";
+		String SQL = "SELECT productID FROM PRODUCTTBL ORDER BY productID DESC";
 		try {
 			conn = ds.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -117,7 +117,7 @@ public class ProductDAO {
 	//상품 상세보기, 상품번호를 이용하여 상품으 가져오는 함수
 	public Product getProductID(String productID){
 		Product product = null;
-		String sql = "select * from product where productID = ?"; //해당 상품 찾기
+		String sql = "select * from producttbl where productID = ?"; //해당 상품 찾기
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -152,8 +152,8 @@ public class ProductDAO {
 	public ArrayList<Product> getProductAll(){
 		ArrayList<Product> list = new ArrayList<Product>();
 		try {
-			String sql = "select * from product";
-			conn = ds.getConnection();
+			String sql = "select * from producttbl";
+			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -188,7 +188,7 @@ public class ProductDAO {
         PreparedStatement pstmt = null;
 		int re = -1;
 		try {
-			String sql = "insert into product(productID, productName, productStock, productPrice, fileName, fileRealName, productInfo) values(?, ?, ?, ?, ?, ?, ?)";
+			String sql = "insert into producttbl(productID, productName, productStock, productPrice, fileName, fileRealName, productInfo) values(?, ?, ?, ?, ?, ?, ?)";
 			conn =DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
 		

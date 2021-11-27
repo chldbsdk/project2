@@ -82,7 +82,7 @@
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('글쓰기에 성공했습니다')");
-				script.println("location.href='bbs.jsp'"); //게시판 눌렀을 때(목록있는 곳)의 위치로 이동 
+				script.println("location.href='QnAboardList.jsp'"); //게시판 눌렀을 때(목록있는 곳)의 위치로 이동 
 				//script.println("history.back()"); //이전 페이지(글쓰기 폼)로 돌아가기 
 				script.println("</script>");
 				script.close();

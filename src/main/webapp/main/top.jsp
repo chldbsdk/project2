@@ -196,7 +196,7 @@ b{
 	<li><a href="#">랭킹</a></li>
 	<li><a href="#">신상</a></li>
 	<li><a href="#">이벤트</a></li>
-	<li><a href="../board/bbs.jsp">게시판</a></li>
+	<li><a href="../board/QnAboardList.jsp">게시판</a></li>
 	</ul>
 </div>
 </center>
