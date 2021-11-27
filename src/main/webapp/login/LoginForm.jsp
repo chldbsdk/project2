@@ -17,10 +17,6 @@ button {
 }
 </style>
 </head>
-<%-- <%
-String saveok=(String)session.getAttribute("saveok");
-String id=(String)session.getAttribute("idok");
-%> --%>
 <script type="text/javascript">
 	function loginCheck() {
 		if(document.loginform.id.value =="") {
@@ -41,7 +37,6 @@ String id=(String)session.getAttribute("idok");
 
 <form name="loginform" action="loginAction.jsp" method="post">
 	<table>
-		<!-- <caption>로그인</caption> -->
 		<tr><td align="center"><h2>로 그 인</h2></td></tr>
 		<tr><td>
 		<input type="text" size="40" name="id" placeholder="아이디"></td></tr>
@@ -62,20 +57,20 @@ String id=(String)session.getAttribute("idok");
 		String msg=request.getParameter("msg");
 		if(msg!=null && msg.equals("0")) {
 	%>
-			<script type="text/javascript">
+		<script type="text/javascript">
 			alert("비밀번호를 확인해주세요.")
 			history.back();
-			</script>
+		</script>
 		<%}
-		else if (msg != null && msg.equals("-1")) {
-%>			<script type="text/javascript">
+		else if (msg != null && msg.equals("-1")) {%>			
+		<script type="text/javascript">
 			alert("아이디를 확인해주세요.")
 			history.back();
-			</script>
+		</script>
 		<%}	%>
 	</table>
 </form>
-</div>
+<%@ include file="../main/footer.jsp" %>		
 </body>
 <%-- <jsp:include page ="../main/footer.jsp" flush="false"/> --%>
 </html>

@@ -8,11 +8,11 @@
 <meta charset="UTF-8">
 <title>회원 삭제 처리</title>
 <style>
- div{padding-left: 800px;}
- body{background-color : LemonChiffon}
+
 </style>
 </head>
 <body>
+<%@ include file="../main/top.jsp" %>
 <%
 request.setCharacterEncoding("UTF-8");
  	String id= (String)session.getAttribute("sessionID"); 

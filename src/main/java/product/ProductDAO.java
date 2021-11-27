@@ -5,16 +5,20 @@ import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 //import javax.naming.Context;
 //import javax.naming.InitialContext;
 import javax.sql.DataSource;
+
+import util.DatabaseUtil;
+
 import java.sql.DriverManager;
 
 public class ProductDAO {
-	private Connection conn; //connection은 db에 접근하게 해주는 객체
-	private ResultSet rs; //ResultSet는 쿼리문을 실행한 정보를 가져오는 클래스
+	private Connection conn; 
+	private ResultSet rs; 
 	private PreparedStatement pstmt;
 	private DataSource ds;
 	
@@ -25,7 +29,7 @@ public class ProductDAO {
 			String dbURL = "jdbc:mysql://localhost:3306/product?serverTimezone=UTC";
 			
 			String dbID="root";
-			String dbPassword = "dmd950112";
+			String dbPassword = "a202044033";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e) {
@@ -49,11 +53,11 @@ public class ProductDAO {
 		}
 	}
 	
-	//상품갱신
+	//상품 갱신
 	public int updateProduct(Product p) {
 		int re = -1;
 		
-		String sql = "update product set productID=?, productName=?, stock=?, price=?, imageSrc=?, productInfo=?";
+		String sql = "update product set productID=?, productName=?, productStock=?, productPrice=?, fileName=?, fileRealName=?, productInfo=?";
 		
 		try {
 			conn = ds.getConnection();
@@ -62,8 +66,9 @@ public class ProductDAO {
 			pstmt.setString(2, p.getProductName());
 			pstmt.setInt(3, p.getProductStock());
 			pstmt.setInt(4, p.getProductPrice());
-			pstmt.setString(5, p.getProductImage());
-			pstmt.setString(6, p.getProductInfo());
+			pstmt.setString(5, p.getFileName());
+			pstmt.setString(6, p.getFileRealName());
+			pstmt.setString(7, p.getProductInfo());
 			
 			re = pstmt.executeUpdate();
 			close(conn, pstmt, null);
@@ -73,7 +78,7 @@ public class ProductDAO {
 		return re;
 	}
 	
-	//상품삭제
+	//상품 삭제
 	public int deleteProduct(String productID) {
 		int re = -1;
 		
@@ -93,8 +98,8 @@ public class ProductDAO {
 	}
 	
 	//productID 상품 번호 가져오는 함수
-	public int getProductId() {
-		String SQL = "SELECT productId FROM PRODUCT ORDER BY productId DESC";
+	public int getProductID() {
+		String SQL = "SELECT productID FROM PRODUCT ORDER BY productID DESC";
 		try {
 			conn = ds.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -102,54 +107,46 @@ public class ProductDAO {
 			if(rs.next()) {
 				return rs.getInt(1) + 1;
 			}
-			return 1; //첫 번째 게시물인 경우
+			return 1; //첫번째 게시물인 경우
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1; //데이터베이스 오류
 	}
 	
-	//상품 상세보기, 상품번호를 이용하여 상품을 가져오는 함수
-		public Product getProductID(String productID){
-			Product product = null;
-			String sql = "select * from product where productID = ?"; //해당 상품 찾기
-			try {
-				conn = ds.getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, productID);
-				rs = pstmt.executeQuery();
-				if(rs.next()){
-					product = new Product();
-					product.setProductID(rs.getString("productID"));
-					product.setProductName(rs.getString("productName"));
-					product.setProductPrice(rs.getInt("productPrice"));
-					product.setProductInfo(rs.getString("productInfo"));
-					product.setProductStock(rs.getInt("productStock"));
-					product.setProductImage(rs.getString("productImage"));
-				}
-			} catch (Exception e) {
-				System.out.println("getProduct err : ");
-			} finally {
-				try {
-					if(rs!=null)rs.close();
-					if(pstmt!=null)pstmt.close();
-					if(conn!=null)conn.close();
-				} catch (Exception e2) {
-					System.out.println("err : " + e2);
-				}
+	//상품 상세보기, 상품번호를 이용하여 상품으 가져오는 함수
+	public Product getProductID(String productID){
+		Product product = null;
+		String sql = "select * from product where productID = ?"; //해당 상품 찾기
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, productID);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				product = new Product();
+				product.setProductID(rs.getString("productID"));
+				product.setProductName(rs.getString("productName"));
+				product.setProductStock(rs.getInt("productStock"));
+				product.setProductPrice(rs.getInt("productPrice"));
+				product.setFileName(rs.getString("fileName"));
+				product.setFileRealName(rs.getString("fileRealName"));
+				product.setProductInfo(rs.getString("productInfo"));
 			}
-			return product;
+		} catch (Exception e) {
+			System.out.println("getProduct err : ");
+		} finally {
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {
+				System.out.println("err : " + e2);
+			}
 		}
-	
-	
-//	public ProductManager() {
-//		try {
-//			Context context = new InitialContext(); //JNDI를 사용하기 위해
-//			ds = (DataSource)context.lookup("java:comp/env/jdbc/orcl"); //??
-//		} catch (Exception e) {
-//			System.out.println("connect err : " + e);
-//		}
-//	}
+		return product;
+	}
+
 	
 	//전체 상품 목록 출력
 	public ArrayList<Product> getProductAll(){
@@ -164,10 +161,11 @@ public class ProductDAO {
 				Product product = new Product();
 				product.setProductID(rs.getString("productID"));
 				product.setProductName(rs.getString("productName"));
-				product.setProductInfo(rs.getString("productInfo"));
-				product.setProductPrice(rs.getInt("productPrice"));
-				product.setProductImage(rs.getString("productImage"));
 				product.setProductStock(rs.getInt("productStock"));
+				product.setProductPrice(rs.getInt("productPrice"));
+				product.setFileName(rs.getString("fileName"));
+				product.setFileRealName(rs.getString("fileRealName"));
+				product.setProductInfo(rs.getString("productInfo"));
 				list.add(product);
 			}
 		} catch (Exception e) {
@@ -184,23 +182,39 @@ public class ProductDAO {
 		return list; //상품 목록 반환
 	}
 	
-	public int insertProduct(Product p) {
+	//상품 등록
+	public int insertProduct(Product p) throws SQLException {
+		Connection conn = null;
+        PreparedStatement pstmt = null;
 		int re = -1;
 		try {
-			String sql = "insert into product(productID, productName, stock, price, imageSrc, productInfo) values(?, ?, ?, ?, ?, ?)";
-			conn = ds.getConnection();
+			String sql = "insert into product(productID, productName, productStock, productPrice, fileName, fileRealName, productInfo) values(?, ?, ?, ?, ?, ?, ?)";
+			conn =DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
 		
 			pstmt.setString(1, p.getProductID());
 			pstmt.setString(2, p.getProductName());
 			pstmt.setInt(3, p.getProductStock());
 			pstmt.setInt(4, p.getProductPrice());
-			pstmt.setString(5, p.getProductImage());
-			pstmt.setString(6, p.getProductInfo());
-			rs = pstmt.executeQuery();
-			close(conn, pstmt, null);
+			pstmt.setString(5, p.getFileName());
+			pstmt.setString(6, p.getFileRealName());
+			pstmt.setString(7, p.getProductInfo());
+			//rs = pstmt.executeQuery();
+			
+			return pstmt.executeUpdate();
+		}catch (SQLException sqle) {
+			throw new RuntimeException(sqle.getMessage());
 		}catch (Exception e) {
 			System.out.println("err : " + e.getMessage());
+		}finally {
+            // Connection, PreparedStatement를 닫는다
+            try{
+            	//close(conn, pstmt, null);
+            	if ( pstmt != null ){ pstmt.close(); pstmt=null; }
+                if ( conn != null ){ conn.close(); conn=null;    }
+            }catch(Exception e){
+                throw new RuntimeException(e.getMessage());
+            }
 		}
 		return re;
 	}

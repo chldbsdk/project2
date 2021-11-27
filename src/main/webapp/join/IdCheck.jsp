@@ -31,6 +31,11 @@
 	MemberDAO dao = MemberDAO.getInstance();
 	int cnt=dao.duplecateID(id);
 	/* out.println("입력 ID : <strong>"+id+"</strong>"); */
+	%>
+	<script type="text/javascript">
+	if(id.length > 5) alert("ㄴㄴ");
+	</script>
+	<%
 	if(cnt==0) {
 		out.println("<p>사용 가능한 아이디입니다.</p>");
 		out.println("<hr>");

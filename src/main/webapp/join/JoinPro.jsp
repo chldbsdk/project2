@@ -12,6 +12,7 @@ div{padding-left: 800px;}
 </style>
 </head>
 <body>
+<%@include file="../main/top.jsp" %>
 <%
  // 한글 깨짐을 방지하기 위한 인코딩 처리
  request.setCharacterEncoding("UTF-8"); 

@@ -35,7 +35,7 @@ transform:translate(-50%, -50%);
 		<div style="background-color: #f0f0f0; height: 100px; width: 800px; line-height: 100px; text-align: center; border-bottom: solid 3px #808080;">
 			<h3 >문의(Q/A)</h3>
 		</div>
-		<form action="QnAboardAction.jsp" method="post">
+		<form action="QnAboardAction.jsp" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="board_id" value="${sessionScope.sessionID }">
 			<div style="height: 50px; line-height: 50px;">
 				<label for="titleInput" style="margin: 0px 60px 0px 60px;">제목</label><input type="text" name="bbsTitle" id="titleInput" style="width: 575px;">
@@ -51,7 +51,7 @@ transform:translate(-50%, -50%);
 			</div>
 			<hr>
 			<div style="width:800px; text-align:center;">
-				<input type="submit" value="등록" style="display:inline;">&nbsp;&nbsp;<button type="button" onClick="location.href='boardBack.jsp'" >취소</button>
+				<input type="submit" value="등록" style="display:inline;">&nbsp;&nbsp;<button type="button" onClick="history.back()" >취소</button>
 			</div>
 		</form>
 	</div>

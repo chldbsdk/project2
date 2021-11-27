@@ -128,7 +128,7 @@ value="<%=memberBean.getPhone() %>"></td>
  </table> 
  <br>
  <input type="button" value="취소"
-onclick="javascript:window.location='MainForm.jsp'">
+onclick="javascript:window.location='../main/main.jsp'">
  <input type="submit" value="수정"/> 
  </form>
 </center>

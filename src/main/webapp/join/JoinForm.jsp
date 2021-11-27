@@ -44,14 +44,6 @@ function IDCheck() {
 				"width=400, height=200, resizable=no, scrollbars=no");
 }
 
-function IDCHECK() {
-	var id = document.getElementByName("id").value;
-	location.href="IdCheck.jsp?id="+id;
-}
-//아이디 입력창에 값 입력시 hidden에 idUncheck를 세팅
-//-> 중복체크 후 다시 아이디 창에 새로운 아이디를 입력했을 때 다시 중복체크 하도록 하기위해
-
-
 </script>
 </head>
 <body>
@@ -63,7 +55,7 @@ function IDCHECK() {
 <form method="post" action="JoinPro.jsp" name="dlatl">
 <table>
 <tr><td id="title">아이디</td></tr>
-<tr><td><input type="text" name="id" size="30" placeholder="아이디 입력(5~11글자)" maxlength="20" readonly>
+<tr><td><input type="text" name="id" size="30" placeholder="중복확인을 해주세요" maxlength="20" readonly>
 <input type="button" name="idcbtn" value="중복확인" onclick="IDCheck()">
 <input type="hidden" name="idcheck" value="idUncheck"></td></tr>
  
@@ -123,7 +115,7 @@ function IDCHECK() {
 <tr><td><input type="text" size="40" name="address"/></td></tr>
 </table> 
 <br> 
-<input type="submit" value="가입"/> 
+<input type="submit" value="가입" onclick="checkValue()"> 
 <input type="button" value="취소" onclick="javascript:window.location='../login/LoginForm.jsp'">
 </form>
 </div>
