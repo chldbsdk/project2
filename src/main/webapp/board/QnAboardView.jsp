@@ -47,7 +47,7 @@ text-align:center;
 	
 	//bbsID를 초기화시킨 후 bbsID라는 데이터가 넘어온 것이 있다면 캐스팅하여 변수에 담는다.
 	//int bbsID = 0;
-	int bbsID = 1; //임의로 설정 
+	int bbsID = 0; //임의로 설정 
 	if(request.getParameter("bbsID") != null){
 		bbsID = Integer.parseInt(request.getParameter("bbsID"));
 	}

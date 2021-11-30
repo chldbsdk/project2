@@ -128,10 +128,13 @@ public class BbsDAO {
 	
 	//게시글 리스트 메소드
 	public ArrayList<Bbs> getList(int pageNumber) {
-		String sql="select * from bbs where bbsID < ? and bbsAvailavle = 1 order by bbsID desc limit 10";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		String sql="select * from bbs where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";
 		ArrayList<Bbs> list= new ArrayList<Bbs>();
 		try {
-			PreparedStatement pstmt=conn.prepareStatement(sql);
+			conn=DatabaseUtil.getConnection();
+			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1,getNext()-(pageNumber-1)*10);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
@@ -168,9 +171,12 @@ public class BbsDAO {
 	
 	//하나의 게시글을 보는 메소드
 	public Bbs getBbs(int bbsID) {
+		Connection conn=null;
+		PreparedStatement pstmt=null;
 		String sql="select * from bbs where bbsID=?";
 		try {
-			PreparedStatement pstmt=conn.prepareStatement(sql);
+			conn=DatabaseUtil.getConnection();
+			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, bbsID);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
