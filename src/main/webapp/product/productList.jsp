@@ -49,7 +49,7 @@ width="100" height="100"></td>
 	%>
 	<tr>
 	<td align="center"><%=p.getProductID() %></td>
-	<td><img src="../productUpload/<%=p.getFileName() %>" width="70"></td>
+	<td><img src="../productUpload/<%=p.getFileRealName() %>" width="70"></td>
 	<td align="center"><%=p.getProductName() %></td>
 	<td align="center"><%=p.getProductPrice() %></td>
 	</tr>

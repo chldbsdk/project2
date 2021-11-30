@@ -90,9 +90,12 @@ Connection conn = null;
 Statement stat = null;
 ResultSet rs = null;
 
-String jdbcDriver = "jdbc:mysql://3.38.96.95:3306/shopping?serverTimezone=UTC";
+/* String jdbcDriver = "jdbc:mysql://3.38.96.95:3306/shopping?serverTimezone=UTC";
 String dbUser="userid";
-String dbPass="ghkdma2020";
+String dbPass="ghkdma2020"; */
+String jdbcDriver = "jdbc:mysql://localhost:3306/shoppingmall?serverTimezone=UTC";
+String dbUser="root";
+String dbPass="a202044033";
 /* int total=0; */
 
 try{
