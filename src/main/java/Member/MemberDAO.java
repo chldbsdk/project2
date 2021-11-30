@@ -36,8 +36,9 @@ public class MemberDAO {
 	 String year = member.getBirthyy();
 	 String month = member.getBirthmm();
 	 String day = member.getBirthdd();
+	 int date=Integer.parseInt(day)+1;
 	 
-	 Date birthday = Date.valueOf(year+"-"+month+"-"+day);
+	 Date birthday = Date.valueOf(year+"-"+month+"-"+date);
 	 
 	 return birthday;
 	 

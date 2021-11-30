@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>회원가입 처리내용</title>
 <style>
-div{padding-left: 800px;}
+#wrap{padding-left: 500px;}
 </style>
 </head>
 <body>

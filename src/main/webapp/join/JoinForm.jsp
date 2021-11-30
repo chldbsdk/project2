@@ -98,18 +98,18 @@ function IDCheck() {
  
 <tr><td id="title">이메일</td></tr>
 <tr>
-<td>
-<input type="text" name="mail1" size="15" maxlength="30">
-<span>@</span>
- <input name="mail2" list="domains" size="15" placeholder="도메인입력/선택">
- <detalist id="domains">
- <option value="naver.com">
- <option value="daum.net">
- <option value="gmail.com">
- <option value="yahoo.co.kr">
-</detalist>
-</td>
-</tr>
+                    <td>
+                        <input type="text" name="mail1" size="15" maxlength="30"> 
+                         <span>@</span>
+                        <input name="mail2" list="domains" size="15" placeholder="도메인입력/선택">
+                     <datalist id="domains">
+                         <option value="naver.com">
+                         <option value="daum.net">
+                         <option value="gmail.com">
+                         <option value="yahoo.co.kr">
+                     </datalist>
+                    </td>
+                </tr>
 <tr><td id="title">전화번호</td></tr>
 <tr><td><input type="text" size="40" name="phone" /></td></tr>
 <tr><td id="title">주소</td></tr>

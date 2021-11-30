@@ -59,7 +59,7 @@ width="100" height="100"></td>
 <table width="100%" cellpadding="0" cellspacgin="0" border="0">
 <tr><td colspan="4" height="5"></td></tr>
 <tr align="center"><td>
-<button type="button" onclick="location.href='QnAboard.jsp'">글쓰기</button>
+<button type="button" onclick="location.href='productInput.jsp'">글쓰기</button>
 </table>
 </body>
 </html>

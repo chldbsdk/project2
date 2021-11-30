@@ -70,7 +70,6 @@ button {
 		<%}	%>
 	</table>
 </form>
-<%@ include file="../main/footer.jsp" %>		
+<%-- <%@ include file="../main/footer.jsp" %>	 --%>	
 </body>
-<%-- <jsp:include page ="../main/footer.jsp" flush="false"/> --%>
 </html>

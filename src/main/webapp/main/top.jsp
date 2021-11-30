@@ -126,7 +126,7 @@ padding-top:7px;
 	color : darkgray;
 }
 
-b{
+#ghkdma{
 	font-size:40px;
 }
 </style>
@@ -165,7 +165,7 @@ b{
 	<header style="padding-top:6px;">
 	<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<b onclick="location.href='../main/main.jsp'">#화음</b>
+	<b onclick="location.href='../main/main.jsp'" id="ghkdma">#화음</b>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" size="50" value="" placeholder="serach">

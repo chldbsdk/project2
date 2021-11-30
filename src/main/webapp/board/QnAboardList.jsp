@@ -55,6 +55,7 @@ text-decoration: none;
 	<th style="text-align:left">제목</th>
 	<th style="text-align:center">작성자</th>
 	<th style="text-align:center">작성일</th></tr>
+	<tr><td colspan="4"><hr></td></tr>
 
 <!-- 	<tr><td>1</td>
 	<td>ㅎㅇ</td>
@@ -89,9 +90,9 @@ Connection conn = null;
 Statement stat = null;
 ResultSet rs = null;
 
-String jdbcDriver = "jdbc:mysql://localhost:3306/shoppingmall?serverTimezone=UTC";
-String dbUser="root";
-String dbPass="a202044033";
+String jdbcDriver = "jdbc:mysql://3.38.96.95:3306/shopping?serverTimezone=UTC";
+String dbUser="userid";
+String dbPass="ghkdma2020";
 /* int total=0; */
 
 try{
@@ -120,10 +121,11 @@ try{
 %>
 <tr>
 <td><%=idx %></td>
-<td align="left"><a href="view.jsp?bbsID=<%=idx %>"><%=title %></a></td>
+<td align="left"><a href="QnAboardView.jsp?bbsID=<%=idx %>"><%=title %></a></td>
 <td align="center"><%=name %></td>
 <td align="center"><%=time %></td>
 </tr>
+<tr><td colspan="4"><hr></td></tr>
 <%} %>
 <%
  rs.close();

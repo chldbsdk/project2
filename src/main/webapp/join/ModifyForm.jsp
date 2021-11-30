@@ -9,11 +9,11 @@
 <title>회원정보 수정화면</title>
 <%
 request.setCharacterEncoding("UTF-8");
- String id = session.getAttribute("sessionID").toString();
+String id = session.getAttribute("sessionID").toString();
  
- MemberDAO dao = MemberDAO.getInstance();
- MemberBean memberBean = dao.getUserInfo(id);
- %>
+MemberDAO dao = MemberDAO.getInstance();
+MemberBean memberBean = dao.getUserInfo(id);
+%>
  
  <script>
  function init(){
