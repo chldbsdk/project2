@@ -32,9 +32,10 @@
 	int cnt=dao.duplecateID(id);
 	/* out.println("입력 ID : <strong>"+id+"</strong>"); */
 	%>
-	<script type="text/javascript">
-	if(id.length > 5) alert("ㄴㄴ");
-	</script>
+	<!-- <script type="text/javascript">
+	if(id.length < 5) alert("아이디는 5-11자 입니다.");
+	else if(id.length >12) alert("아이디는 5-11자 입니다.");
+	</script> -->
 	<%
 	if(cnt==0) {
 		out.println("<p>사용 가능한 아이디입니다.</p>");

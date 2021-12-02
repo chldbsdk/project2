@@ -12,7 +12,6 @@
 	.banner {position: relative; width: 580px; height: 420px; top: 50px;  margin:0 auto; padding:0; overflow: hidden;}
 	.banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
 	.banner ul li {float: left; width: 580px; height: 420px; margin:0; padding:0;}
-
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -20,27 +19,13 @@
 	$(document).ready(function() {
 		//사용할 배너
 		var $banner = $(".banner").find("ul");
-
 		var $bannerWidth = $banner.children().outerWidth();//배너 이미지의 폭
 		var $bannerHeight = $banner.children().outerHeight(); // 높이
 		var $bannerLength = $banner.children().length;//배너 이미지의 갯수
 		var rollingId;
-
 		//정해진 초마다 함수 실행
 		rollingId = setInterval(function() { rollingStart(); }, 4000);//다음 이미지로 롤링 애니메이션 할 시간차
-
-		//마우스 오버시 롤링을 멈춘다.
-		banner.mouseover(function(){
-			//중지
-			clearInterval(rollingId);
-			$(this).css("cursor", "pointer");
-		});
-		//마우스 아웃되면 다시 시작
-		banner.mouseout(function(){
-			rollingId = setInterval(function() { rollingStart(); }, 3000);
-			$(this).css("cursor", "default");
-		});
-		
+				
 		function rollingStart() {
 			$banner.css("width", $bannerWidth * $bannerLength + "px");
 			$banner.css("height", $bannerHeight + "px");
@@ -63,7 +48,7 @@
 <body>
 		<div class="banner">
 			<ul>
-				<li><img src="../main/bannerimg/AWARD.JPG" width="580" height="420px"></li>
+				<li><img src="bannerimg/AWARD.JPG" width="580" height="420px"></li>
 				<li><img src="../main/bannerimg/EVENT.JPG" width="580" height="420px"></li>
 				<li><img src="../main/bannerimg/STORE.JPG" width="580" height="420px"></li>
 			</ul>

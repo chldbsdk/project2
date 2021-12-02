@@ -43,6 +43,11 @@ function IDCheck() {
 	window.open("IdCheckForm.jsp","chkForm",
 				"width=400, height=200, resizable=no, scrollbars=no");
 }
+function IDCheck2() {
+	window.name="check";
+	window.open("check.jsp","chkForm",
+				"width=400, height=200, resizable=no, scrollbars=no");
+}
 
 </script>
 </head>
@@ -56,7 +61,7 @@ function IDCheck() {
 <table>
 <tr><td id="title">아이디</td></tr>
 <tr><td><input type="text" name="id" size="30" placeholder="중복확인을 해주세요" maxlength="20" readonly>
-<input type="button" name="idcbtn" value="중복확인" onclick="IDCheck()">
+<input type="button" name="idcbtn" value="중복확인" onclick="IDCheck2()">
 <input type="hidden" name="idcheck" value="idUncheck"></td></tr>
  
 <tr><td id="title">비밀번호</td></tr>
@@ -117,7 +122,7 @@ function IDCheck() {
 </table> 
 <br> 
 <input type="submit" value="가입" onclick="checkValue()"> 
-<input type="button" value="취소" onclick="javascript:window.location='../login/LoginForm.jsp'">
+<input type="button" value="취소" onclick=history.back(-1)>
 </form>
 </div>
 </body>
