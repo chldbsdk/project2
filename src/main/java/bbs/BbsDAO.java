@@ -152,6 +152,41 @@ public class BbsDAO {
 		}
 		return list;
 	}
+	
+	//또다른 게시글 리스트 (얘는 페이징처리 없음)
+	public ArrayList<Bbs> getBbsAll(){
+		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		try {
+			String sql = "select * from bbs order by bbsID DESC";
+			conn = DatabaseUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				Bbs bbs = new Bbs();
+				bbs.setBbsID(rs.getInt("bbsID"));
+				bbs.setBbsTitle(rs.getString("bbsTitle"));
+				bbs.setUserID(rs.getString("userID"));
+				bbs.setBbsDate(rs.getString("bbsDate"));
+				bbs.setBbsContent(rs.getString("bbsContent"));
+				bbs.setFileName(rs.getString("fileName"));
+				bbs.setFileRealName(rs.getString("fileRealName"));
+				bbs.setBbsAvailable(rs.getInt("bbsAvailable"));
+				list.add(bbs);
+			}
+		} catch (Exception e) {
+			System.out.println("getBbsAll err : " + e);
+		} finally {
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {
+				System.out.println("err : " + e2);
+			}
+		}
+		return list; // 목록 반환
+	}
 
 	//페이징 처리 메소드
 	public boolean nextPage(int pageNumber) {

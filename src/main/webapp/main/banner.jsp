@@ -48,9 +48,9 @@
 <body>
 		<div class="banner">
 			<ul>
-				<li><img src="bannerimg/AWARD.JPG" width="580" height="420px"></li>
-				<li><img src="../main/bannerimg/EVENT.JPG" width="580" height="420px"></li>
-				<li><img src="../main/bannerimg/STORE.JPG" width="580" height="420px"></li>
+				<li><img src="../main/bannerimg/AWARD.jpg" width="580" height="420px"></li>
+				<li><img src="../main/bannerimg/EVENT.jpg" width="580" height="420px"></li>
+				<li><img src="../main/bannerimg/STORE.jpg" width="580" height="420px"></li>
 			</ul>
 		</div>
 	</body>

@@ -14,8 +14,8 @@
  ul, lo, li { margin:0; padding:0; list-style:none; }
 
  section#content { float:right; width:500px; 
- 					margin-right:400px; margin-top:300px;
- 					margin-bottom:210px;}
+ 					margin-right:400px; margin-top:50px;
+ 					margin-bottom:50px;}
  section#container::after { content:""; display:block; clear:both; } 
 
 </style>
@@ -27,7 +27,7 @@
 	<section id="container">
 		<div id="container_box">		
 			<section id="content">
-				본문 영역
+				<%@include file="banner.jsp" %>
 			</section>
 		<%-- <%@ include file="aside.jsp" %> --%>	
 		</div>

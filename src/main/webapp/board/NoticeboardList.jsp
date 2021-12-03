@@ -1,10 +1,10 @@
+<%@page import="bbs.noticeBbs"%>
+<%@page import="bbs.noticeBbsDAO"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="bbs.Bbs"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="bbs.BbsDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
@@ -31,34 +31,33 @@ text-decoration: none;
 <body>
 <%@ include file="../main/top.jsp" %>
 <%@include file="../main/side.jsp" %>
-
 <table id="list">
-	<tr><th style="text-align:center">NO</th>
-	<th style="text-align:center">제목</th>
+	<tr><th style="text-align:center">번호</th>
+	<th style="text-align:left">제목</th>
 	<th style="text-align:center">작성자</th>
 	<th style="text-align:center">작성일</th></tr>
 	<tr><td colspan="4"><hr></td></tr>
 
 <%
-		BbsDAO DAO = new BbsDAO();
-		ArrayList<Bbs> list=DAO.getBbsAll();
-		for(Bbs p:list){		
+		noticeBbsDAO DAO = new noticeBbsDAO();
+		ArrayList<noticeBbs> list=DAO.getNoticeAll();
+		for(noticeBbs p:list){		
 %>
 	<tr>
-	<td align="center"><%=p.getBbsID() %></td>
-	<td align="left"><a href="QnAboardView.jsp?bbsID=<%=p.getBbsID() %>"><%=p.getBbsTitle() %></a></td>
-	<td align="center"><%=p.getUserID() %></td>
-	<td align="center"><%=p.getBbsDate() %></td>
+	<td align="center"><%=p.getNoticeBbsID() %></td>
+	<td align="left"><a href="NoticeboardView.jsp?bbsID=<%=p.getNoticeBbsID() %>"><%=p.getNoticeBbsTitle() %></a></td>
+	<td align="center">관리자</td>
+	<td align="center"><%=p.getNoticeBbsDate() %></td>
 	</tr>
 	<tr><td colspan="4"><hr></td></tr>
 	<%} %>
 </table>
 
-<table width="100%" cellpadding="0" cellspacgin="0" border="0">
+<!-- <table width="100%" cellpadding="0" cellspacgin="0" border="0">
 <tr><td colspan="4" height="5"></td></tr>
 <tr align="center"><td>
-<button type="button" onclick="location.href='QnAboard.jsp'">글쓰기</button>
-</table>
+<button type="button" onclick="location.href='board.jsp'">글쓰기</button>
+</table> -->
 
 <%@ include file="../main/footer.jsp" %>	
 </body>

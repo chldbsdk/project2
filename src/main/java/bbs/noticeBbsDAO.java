@@ -5,8 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
+import product.Product;
 import util.DatabaseUtil;
 
 public class noticeBbsDAO {
@@ -70,7 +72,7 @@ public class noticeBbsDAO {
 			Connection conn = null;
 	        PreparedStatement pstmt = null;
 			
-			String SQL = "insert into noticeBbs(noticeBbsID, noticeBbsTitle, noticeBbsDate, noticeBbsContent, noticeBbsFileName, noticeBbsFileRealName, noticeBbsAvailable) VALUES(?, ?, ?, ?, ?, ?, ?)";
+			String SQL = "insert into noticebbs(noticeBbsID, noticeBbsTitle, noticeBbsDate, noticeBbsContent, noticeBbsFileName, noticeBbsFileRealName, noticeBbsAvailable) VALUES(?, ?, ?, ?, ?, ?, ?)";
 			try {
 				conn =DatabaseUtil.getConnection();
 				
@@ -100,4 +102,38 @@ public class noticeBbsDAO {
 			}
 			return -1; //데이터베이스 오류
 		}    
+		
+		//공지목록
+		public ArrayList<noticeBbs> getNoticeAll(){
+			ArrayList<noticeBbs> list = new ArrayList<noticeBbs>();
+			try {
+				String sql = "select * from noticebbs order by noticebbsid desc";
+				conn = DatabaseUtil.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()){
+					noticeBbs notice = new noticeBbs();
+					notice.setNoticeBbsID(rs.getInt("noticeBbsID"));
+					notice.setNoticeBbsTitle(rs.getString("noticeBbsTitle"));
+					notice.setNoticeBbsDate(rs.getString("noticeBbsDate"));
+					notice.setNoticeBbsContent(rs.getString("noticeBbsContent"));
+					notice.setNoticeBbsFileName(rs.getString("noticeBbsFileName"));
+					notice.setNoticeBbsFileRealName(rs.getString("noticeBbsFileRealName"));
+					notice.setNoticeBbsAvailable(rs.getInt("noticeBbsAvailable"));
+					list.add(notice);
+				}
+			} catch (Exception e) {
+				System.out.println("getNoticeAll err : " + e);
+			} finally {
+				try {
+					if(rs!=null)rs.close();
+					if(pstmt!=null)pstmt.close();
+					if(conn!=null)conn.close();
+				} catch (Exception e2) {
+					System.out.println("err : " + e2);
+				}
+			}
+			return list; //목록 반환
+		}
 }

@@ -8,7 +8,7 @@
 <link href="../design.css" rel="stylesheet" type="text/css">
 <style>
 table {
-	position:absolute;
+	position:absolute; 
   	padding : 150px 477.4px;
 }
 

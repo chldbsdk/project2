@@ -136,6 +136,11 @@ padding-top:7px;
 		alert("로그인 해주세요!!")
 		location.href="../login/LoginForm.jsp"
 	}
+	
+	function bbb() {
+		alert("로그인 해주세요!!")
+		location.href="../login/LoginForm.jsp"
+	}
 </script>
 <body>
 <center>
@@ -165,18 +170,20 @@ padding-top:7px;
 	<header style="padding-top:6px;">
 	<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<b onclick="location.href='../main/main.jsp'" id="ghkdma">#화음</b>
+	<b onclick="location.href='../main/main.jsp'" id="ghkdma"><I>#화음</I></b>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<input type="text" size="50" value="" placeholder="serach">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
-	&nbsp;&nbsp;
 	<%if(userId==null) {%>
+	<span onclick="bbb()"><i class="fas fa-shopping-cart"></i></span>
+	&nbsp;&nbsp;
 	<span onclick="aaa()"><i class="fas fa-user"></i></span>
 	<%} else { %>
+	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
+	&nbsp;&nbsp;
 	<span onclick="location.href='../join/UserInfoForm.jsp'"><i class="fas fa-user"></i></span>
 	<%} %>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
