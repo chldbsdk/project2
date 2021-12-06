@@ -20,7 +20,7 @@ public class ProductDAO {
 	private Connection conn; 
 	private ResultSet rs; 
 	private PreparedStatement pstmt;
-	private DataSource ds;
+	//private DataSource ds;
 	
 	//mysql 처리부분
 	public ProductDAO() {		
@@ -60,7 +60,7 @@ public class ProductDAO {
 		String sql = "update producttbl set productID=?, productName=?, productStock=?, productPrice=?, fileName=?, fileRealName=?, productInfo=?";
 		
 		try {
-			conn = ds.getConnection();
+			conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, p.getProductID());
 			pstmt.setString(2, p.getProductName());
@@ -85,7 +85,7 @@ public class ProductDAO {
 		String sql = "delete producttbl where productID=?";
 		
 		try {
-			conn = ds.getConnection();
+			conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, productID);
 			
@@ -101,7 +101,7 @@ public class ProductDAO {
 	public int getProductID() {
 		String SQL = "SELECT productID FROM PRODUCTTBL ORDER BY productID DESC";
 		try {
-			conn = ds.getConnection();
+			conn = DatabaseUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
@@ -115,11 +115,11 @@ public class ProductDAO {
 	}
 	
 	//상품 상세보기, 상품번호를 이용하여 상품으 가져오는 함수
-	public Product getProductID(String productID){
+	public Product getProduct(String productID){
 		Product product = null;
 		String sql = "select * from producttbl where productID = ?"; //해당 상품 찾기
 		try {
-			conn = ds.getConnection();
+			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, productID);
 			rs = pstmt.executeQuery();

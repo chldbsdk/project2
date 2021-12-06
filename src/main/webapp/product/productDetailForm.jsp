@@ -6,9 +6,9 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <% 
-	//String productID = request.getParameter("productID"); //상품 이미지 클릭시 productID가 전달됨.
-	//Product product = productdao.getProductID(productID);
-	Product product = productdao.getProductID("22"); //임시적으로 처리했어요.
+	String productID = request.getParameter("productID"); //상품 이미지 클릭시 productID가 전달됨.
+	Product product = productdao.getProduct(productID);
+	//Product product = productdao.getProduct("2"); //임시적으로 처리했어요.
 %>
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ a{
 <form action="productDetailRecieve.jsp" method="post"> <!-- 전달 장바구니 or 즉시구매 -->
 <table id="out">
 	<tr>
-	<td style="width: 300px; height: 380px; line-height:0;"><img src="../productUpload/<%= product.getFileRealName() %>" style="paddint:0; margin:0px;" alt="상품 사진입니다."></td>
+	<td style="width: 100px; height: 180px; line-height:0;"><img src="../productUpload/<%= product.getFileRealName() %>" style="paddint:0; margin:0px; width:100px; height:100px;" alt="상품 사진입니다."></td>
 	<td>
 		<table id="in" style="margin-left: 20px;">
 			<tr>
@@ -99,7 +99,7 @@ a{
         		<td colspan="2"><hr class="pink" color="#f0768b"></td>
         	</tr>
         	<tr>
-        		<td colspan="2" style="text-align:center;"><a class="btn1" href="add.jsp.submit()">장바구니</a><a class="btn2" href="buynow.jsp.submit()">바로구매</a></td>
+        		<td colspan="2" style="text-align:center;"><a class="btn1" href="../add.jsp?bbsid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="buynow.jsp.submit()">바로구매</a></td>
 			</table>
 </table>
 </form>

@@ -1,3 +1,5 @@
+<%@page import="product.ProductDAO"%>
+<%@page import="product.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -10,14 +12,15 @@
 <body>
 <%request.setCharacterEncoding("utf-8"); %>
 <%
-	String menu = request.getParameter("menu");
-	ArrayList<String> list = (ArrayList)session.getAttribute("list");
-	if(list==null) {
-		list = new ArrayList<String>();
-	}
-	list.add(menu);
-	
-	session.setAttribute("list",list);
+	String bbsid = request.getParameter("bbsid");
+	ProductDAO dao=new ProductDAO();
+	ArrayList<Product> list = dao.getProductAll(); //바꿀예정
+	Product goods = new Product();
+	for(int i=0;i<list.size();i++) {
+		goods=list.get(i);
+		if(goods.getProductID().equals(bbsid)) break;
+	}	
 %>
+<p><%=bbsid %> 이거다</p>
 </body>
 </html>
