@@ -8,7 +8,14 @@ public class Product {
 	private int productStock; //상품 재고
 	private String fileName; //상품 이미지 경로
 	private String fileRealName; //서버에서의 실제 상품 경로
+	private int quantity; //장바구니에 담은 개수
 	
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public String getFileName() {
 		return fileName;
 	}

@@ -74,7 +74,7 @@ text-align:center;
 		<tr><td class="title"><label>이미지</label></td><td><img src="../QnAUpload/<%= bbs.getFileRealName() %>" alt="이미지" style="width:200px; height:200px;"></td></tr>
 		<tr><td colspan="2"><hr></td></tr>
 		<tr><td colspan="2" class="title"><button type="button" onClick="location.href='QnAboardList.jsp'">목록</button>&nbsp;&nbsp;
-				<input type="submit" value="수정" style="display:inline;">&nbsp;&nbsp;<button type="button" onClick="location.href='boardBack.jsp'">삭제</button></td></tr>		
+		</td></tr>
 	</table>
 	</form>
 </div>

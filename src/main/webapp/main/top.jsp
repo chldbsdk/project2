@@ -182,7 +182,7 @@ padding-top:7px;
 	&nbsp;&nbsp;
 	<span onclick="aaa()"><i class="fas fa-user"></i></span>
 	<%} else { %>
-	<span onclick="location.href='../login/IdSearch.jsp'"><i class="fas fa-shopping-cart"></i></span>
+	<span onclick="location.href='../cart.jsp'"><i class="fas fa-shopping-cart"></i></span>
 	&nbsp;&nbsp;
 	<span onclick="location.href='../join/UserInfoForm.jsp'"><i class="fas fa-user"></i></span>
 	<%} %>
