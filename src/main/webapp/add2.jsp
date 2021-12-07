@@ -25,7 +25,7 @@
 	}
 	ArrayList<Product> list = (ArrayList<Product>)session.getAttribute("productlist");
 	if(list == null) {
-		list=new ArrayList();
+		list=new ArrayList<>();
 		session.setAttribute("productlist",list);
 	}
 	int cnt=0;

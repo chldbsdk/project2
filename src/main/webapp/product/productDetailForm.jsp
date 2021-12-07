@@ -99,7 +99,7 @@ a{
         		<td colspan="2"><hr class="pink" color="#f0768b"></td>
         	</tr>
         	<tr>
-        		<td colspan="2" style="text-align:center;"><a class="btn1" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="buynow.jsp.submit()">바로구매</a></td>
+        		<td colspan="2" style="text-align:center;"><a class="btn1" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="../order/order.jsp">바로구매</a></td>
 			</table>
 </table>
 </form>

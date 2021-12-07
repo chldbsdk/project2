@@ -22,7 +22,7 @@ public class reviewBbsDAO {
 			Connection conn = null;
 	        PreparedStatement pstmt = null;
 	        reviewBbs bbs = null;
-			String sql = "select * from bbs where bbsID = ?"; 
+			String sql = "select * from reviewbbs where bbsID = ?"; 
 			try {
 				conn =DatabaseUtil.getConnection();
 				pstmt = conn.prepareStatement(sql);

@@ -32,10 +32,10 @@ text-decoration: none;
 <%@ include file="../main/top.jsp" %>
 <%@include file="../main/side.jsp" %>
 <table id="list">
-	<tr><th style="text-align:center">번호</th>
-	<th style="text-align:left">제목</th>
+	<th style="text-align:center">NO</th>
+	<th style="text-align:center">제목</th>
 	<th style="text-align:center">작성자</th>
-	<th style="text-align:center">작성일</th></tr>
+	<th style="text-align:center">작성일</th>
 	<tr><td colspan="4"><hr></td></tr>
 
 <%

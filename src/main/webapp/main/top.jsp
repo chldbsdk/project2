@@ -182,7 +182,7 @@ padding-top:7px;
 	&nbsp;&nbsp;
 	<span onclick="aaa()"><i class="fas fa-user"></i></span>
 	<%} else { %>
-	<span onclick="location.href='../cart.jsp'"><i class="fas fa-shopping-cart"></i></span>
+	<span onclick="location.href='../product/cart.jsp'"><i class="fas fa-shopping-cart"></i></span>
 	&nbsp;&nbsp;
 	<span onclick="location.href='../join/UserInfoForm.jsp'"><i class="fas fa-user"></i></span>
 	<%} %>
@@ -203,7 +203,7 @@ padding-top:7px;
 	<li><a href="#">랭킹</a></li>
 	<li><a href="#">신상</a></li>
 	<li><a href="#">이벤트</a></li>
-	<li><a href="../board/QnAboardList.jsp">게시판</a></li>
+	<li><a href="../board/NoticeboardList.jsp">게시판</a></li>
 	</ul>
 </div>
 </center>
