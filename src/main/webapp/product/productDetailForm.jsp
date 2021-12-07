@@ -99,7 +99,7 @@ a{
         		<td colspan="2"><hr class="pink" color="#f0768b"></td>
         	</tr>
         	<tr>
-        		<td colspan="2" style="text-align:center;"><a class="btn1" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="../order/order.jsp">바로구매</a></td>
+        		<td colspan="2" style="text-align:center;"><a class="btn1" onclick="tlqkf()" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="../order/order.jsp">바로구매</a></td>
 			</table>
 </table>
 </form>
@@ -107,6 +107,11 @@ a{
 	int productPrice = product.getProductPrice();	
 %>
 <script>
+function tlqkf() {
+	var prcnt=document.getElementByid("count").value;
+	window.open('add.jsp?prcnt='+prcnt);
+}
+
 //버튼 숫자 증감 함수
 function Count(type, ths){
 	//$는 제이쿼리임을 나타내는 것, 객체 그 자체를 저장 가능. 

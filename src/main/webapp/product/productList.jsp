@@ -53,7 +53,9 @@ text-decoration: none;
          </div><br>
          <% i = 0;
       }
-      i++;
+      else{
+         i++;
+      }
    } %>
 </div>
 </body>

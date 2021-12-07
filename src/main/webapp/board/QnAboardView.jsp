@@ -79,7 +79,11 @@ position: relative;
       <tr><td colspan="2"><hr></td></tr>
       <tr><td class="title"><label>내용</label></td><td><label><%= bbs.getBbsContent() %></label></td></tr>
       <tr><td colspan="2"><hr></td></tr>
+      <%if (bbs.getFileRealName()==null) {%>
+      <tr><td class="title"><label>이미지</label></td><td>사진 없음</td></tr>
+      <%}else { %>
       <tr><td class="title"><label>이미지</label></td><td><img src="../QnAUpload/<%= bbs.getFileRealName() %>" alt="이미지" style="width:200px; height:200px;"></td></tr>
+      <%} %>
       <tr><td colspan="2"><hr></td></tr>
       <tr><td colspan="2" class="title"><button type="button" onClick="location.href='ReviewboardList.jsp'">목록</button>&nbsp;&nbsp;
             <input type="submit" value="수정" style="display:inline;">&nbsp;&nbsp;<button type="button" onClick="location.href='boardBack.jsp'">삭제</button></td></tr>      

@@ -74,7 +74,7 @@ public class reviewBbsDAO {
 			Connection conn = null;
 	        PreparedStatement pstmt = null;
 			
-			String SQL = "insert into bbs(bbsID, bbsTitle, userID, bbsDate, bbsContent, fileName, fileRealName, fileName2, fileRealName2, bbsAvailable) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			String SQL = "insert into reviewbbs(bbsID, bbsTitle, userID, bbsDate, bbsContent, fileName, fileRealName, fileName2, fileRealName2, bbsAvailable) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 			try {
 				conn =DatabaseUtil.getConnection();
 				
@@ -116,7 +116,7 @@ public class reviewBbsDAO {
 		public ArrayList<reviewBbs> getBbsAll(){
 			ArrayList<reviewBbs> list = new ArrayList<reviewBbs>();
 			try {
-				String sql = "select * from bbs order by bbsID DESC";
+				String sql = "select * from reviewbbs order by bbsID DESC";
 				conn = DatabaseUtil.getConnection();
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();

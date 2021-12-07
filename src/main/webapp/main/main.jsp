@@ -28,6 +28,7 @@
 		<div id="container_box">		
 			<section id="content">
 				<%@include file="banner.jsp" %>
+				<%@include file="popup.jsp" %>
 			</section>
 		<%-- <%@ include file="aside.jsp" %> --%>	
 		</div>

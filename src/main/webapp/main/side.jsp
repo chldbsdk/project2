@@ -11,7 +11,7 @@
 	width:200px;
 	background-color:white;
 	border-right:2px solid #ddd;
-	position:absolute;
+	position:fixed;
 	height:100%;
 }
 #h1 {
@@ -36,13 +36,13 @@
 }
 </style>
 <body>
-<nav id="dndn">
+<div id="dndn">
 <h1 id="h1">게시판</h1>
 <ul class="catemenu">
 	<li><a href="../board/NoticeboardList.jsp">공지사항</a></li>
 	<li><a href="../board/QnAboardList.jsp">문의(Q&A)</a></li>
 	<li><a href="../board/ReviewboardList.jsp">리뷰게시판</a></li>
 </ul>
-</nav>
+</div>
 </body>
 </html>

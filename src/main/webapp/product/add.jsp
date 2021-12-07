@@ -12,9 +12,13 @@
 </head>
 <body>
 <%request.setCharacterEncoding("utf-8"); %>
+<script type="text/javascript">
+var productcnt = 
+</script>
 <%
 	String id = request.getParameter("productid"); //앞에서 넘겨받은 상품게시글id
-	String productcnt=request.getParameter("buyCount"); //앞에서 넘겨 받은 상품 구매할 개수
+	//int productcnt=Integer.parseInt(request.getParameter("buyCount")); //앞에서 넘겨 받은 상품 구매할 개수
+	//int prcnt=Integer.parseInt(request.getParameter("prcnt"));
 	ProductDAO dao=new ProductDAO(); 
 	ArrayList<Product> prlist = dao.getProductAll(); //상품 정보를 받는 리스트 모든 상품들 담겨있음.
 	Product product = new Product();

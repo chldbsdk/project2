@@ -21,6 +21,7 @@ position: relative;
 <%@ include file = "../main/top.jsp" %>
 <%
 	request.setCharacterEncoding("utf-8");
+	//int productcnt=Integer.parseInt(request.getParameter("productcnt"));
 	/* ArrayList<Product> list = (ArrayList<Product>)session.getAttribute("productlist");
 	if(list == null) out.println("선택 상품 없음");
 	else {
