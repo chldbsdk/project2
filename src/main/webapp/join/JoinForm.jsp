@@ -46,7 +46,7 @@ function IDCheck() {
 function IDCheck2() {
 	window.name="check";
 	window.open("check.jsp","chkForm",
-				"width=400, height=200, resizable=no, scrollbars=no");
+				"width=600, height=200, left=500, top=200,resizable=no, scrollbars=no");
 }
 
 </script>

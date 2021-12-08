@@ -57,14 +57,14 @@
       userID = (String)session.getAttribute("sessionID"); //유저아이디에 해당 세션값을 넣어준다.
    }
    
-   //if(userID == null) { //로그인이 안된 경우
-   //   PrintWriter script = response.getWriter();
-   //   script.println("<script>");
-   //   script.println("alert('로그인을 하세요.')"); //'로그인 하세요.' 경고창 띄우기
-   //   script.println("location.href='../login/LoginForm.jsp'"); //로그인 화면으로 이동, 로그인jsp
-   //   script.println("</script>");
-   //   script.close();
-   //}else { //로그인한 경우 
+   if(userID == null) { //로그인이 안된 경우
+      PrintWriter script = response.getWriter();
+       script.println("<script>");
+      script.println("alert('로그인을 하세요.')"); //'로그인 하세요.' 경고창 띄우기
+      script.println("location.href='../login/LoginForm.jsp'"); //로그인 화면으로 이동, 로그인jsp
+      script.println("</script>");
+     script.close();
+   }else { //로그인한 경우 
       
       if(bbs.getBbsTitle() == null || bbs.getBbsContent() == null) { //게시글의 제목 or 내용 입력하지 않은 경우 
          PrintWriter script = response.getWriter();
@@ -98,7 +98,7 @@
             script.close();
          }
       }
-   //}
+   }
 %>
 </body>
 </html>

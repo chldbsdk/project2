@@ -69,7 +69,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('글쓰기에 성공했습니다')");
-			script.println("location.href='NoticeboardList.jsp'"); //글쓰기 폼으로 이동
+			script.println("location.href='Noticeboard.jsp'"); //글쓰기 폼으로 이동
 			script.println("</script>");
 			script.close();
 			}	

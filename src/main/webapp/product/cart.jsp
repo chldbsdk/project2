@@ -29,7 +29,7 @@ position: relative;
 			out.println(bbsid+"<br>"+"엥");
 	} */
 %>
-<form action="order/order.jsp" method="post">
+<form action="../order/order.jsp" method="post">
 <table id="list">
 <th style="text-align:center">선택</th>
 	<th style="text-align:center">사진</th>
@@ -66,7 +66,11 @@ for(int i=0;i<cartList.size();i++) {
 </tr>
 <%} %>
 <tr>
-<th></th><th></th><th></th><th></th><th>총액</th><th><%=sum %></tr>
+<th></th><th></th><th></th><th></th><th>총액</th><th><%=sum %></th></tr>
+<tr>
+<td></td><td></td><td></td><td></td><td></td>
+<td><input type="button" value="구매하기"></td>
+</tr>
 </table>
 </form>
 </body>

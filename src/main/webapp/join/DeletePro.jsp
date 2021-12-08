@@ -8,7 +8,9 @@
 <meta charset="UTF-8">
 <title>회원 삭제 처리</title>
 <style>
-
+#ddiv {
+padding:20px;
+}
 </style>
 </head>
 <body>
@@ -27,7 +29,8 @@ request.setCharacterEncoding("UTF-8");
  		session.invalidate(); // 삭제했다면 세션정보를 삭제한다.
  %>
 <br><br>
-<b><font size="4" color="black">회원정보가 삭제되었습니다.</font></b>
+<div id="ddiv">
+<b><font size="4" color="black">회원정보가 삭제되었습니다.</font></b></div>
 <br><br><br>
  
 <input type="button" value="확인"

@@ -18,7 +18,7 @@
 <title>상품 상세 정보</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- 제이쿼리 사용 -->
 <style>
-strong{
+#sstrong{
 	font-size: 24px;
 	color: #525252;
 }
@@ -34,7 +34,7 @@ strong{
 	font-size:18px;
 	width:600px;
 }
-a{
+.btn1{
 	text-decoration: none;
 	color: black;
 	font-size: 20px;
@@ -42,13 +42,18 @@ a{
 	padding: 10px 20px 10px 20px;
 	border-radius: 5px;
 	display: inline-block;
-}
-.btn1{
 	color: #e93554;
 	background-color: white;
 	border: 2px solid #e93554;
 }
 .btn2{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	margin: 20px;
+	padding: 10px 20px 10px 20px;
+	border-radius: 5px;
+	display: inline-block;
 	color: white;
 	background-color: #e93554 ;
 	border-bottom: 5px solid #e93554 ;
@@ -79,13 +84,13 @@ a{
 			</tr>
 			<tr><td colspan="2"><br></td></tr>
 			<tr>
-				<td><strong>판매가</strong></td><td class="a"><%= product.getProductPrice() %>원</td>
+				<td><strong id="sstrong">판매가</strong></td><td class="a"><%= product.getProductPrice() %>원</td>
 			</tr>
 			<tr><td colspan="2"><hr></td></tr>
-			<tr><td><strong>상품설명</strong></td><td class="a"><%= product.getProductInfo() %></td></tr>
+			<tr><td><strong id="sstrong">상품설명</strong></td><td class="a"><%= product.getProductInfo() %></td></tr>
 			<tr><td colspan="2"><hr></td></tr>
 			<tr>
-				<td><strong>수량</strong></td>
+				<td><strong id="sstrong">수량</strong></td>
 				<td><button type ="button" onclick="Count('p',this);">+</button>
         			<input type="text" id='count' onchange='getCount()' name="buyCount" value="0" readonly="readonly" style="text-align:center;"/>
         			<button type="button" onclick="Count('m', this);">-</button>
@@ -99,7 +104,7 @@ a{
         		<td colspan="2"><hr class="pink" color="#f0768b"></td>
         	</tr>
         	<tr>
-        		<td colspan="2" style="text-align:center;"><a class="btn1" onclick="tlqkf()" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a class="btn2" href="../order/order.jsp">바로구매</a></td>
+        		<td colspan="2" style="text-align:center;"><a id="atag" class="btn1" onclick="tlqkf()" href="add.jsp?productid=<%=product.getProductID() %>">장바구니</a><a id="atag2" class="btn2" href="../order/order.jsp">바로구매</a></td>
 			</table>
 </table>
 </form>
@@ -128,6 +133,10 @@ function Count(type, ths){
         }
         else{ //재고보다 count가 큰 경우 
         	alert('죄송합니다. 재고가 부족합니다.');
+        	Count=0;
+        	$input.val(Count);
+        	var showResult = Count * <%= productPrice%>; //총수량
+        	$("#result").html(showResult);
         }
     }
     else{ //- 누른 경우 

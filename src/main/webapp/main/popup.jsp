@@ -44,7 +44,7 @@ font-size:16px; font-weight:600; width: 40px; height : 30px;color:black; float: 
             document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
         }
         function closePop() {
-            if ( document.pop_form.chkbox.checked ){
+            if ( document.pop_form.close ){
                 setCookie( "maindiv", "done" , 1 );
             }
             document.all['layer_popup'].style.visibility = "hidden";
@@ -70,7 +70,7 @@ font-size:16px; font-weight:600; width: 40px; height : 30px;color:black; float: 
             </p>
         </div>
           <form name="pop_form">
-        <div id="check" ><input type="checkbox" name="chkbox" value="checkbox" id='chkbox' ></div>
+        <!-- <div id="check" ><input type="checkbox" name="chkbox" value="checkbox" id='chkbox' ></div> -->
 		<div id="close" ><a href="javascript:closePop();">닫기</a></div>    
 		</form>
 	</div>
